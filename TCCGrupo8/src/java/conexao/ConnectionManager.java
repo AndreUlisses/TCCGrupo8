@@ -14,7 +14,7 @@ public class ConnectionManager {
         //conexão local
         String STR_CONEX = "jdbc:mysql://localhost:3306/DB_TCCGRUPO8";
         String USER = "root";
-        String PASSWORD = "";
+        String PASSWORD = "123123";
 
 	
         try {
