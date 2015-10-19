@@ -12,7 +12,7 @@ public class ConnectionManager {
 
         String STR_DRIVER = "org.gjt.mm.mysql.Driver";
         //conexão local
-        String STR_CONEX = "jdbc:mysql://localhost:3306/DB_TCCGRUPO8";
+        String STR_CONEX = "jdbc:mysql://localhost:3306/ChatDB";
         String USER = "root";
         String PASSWORD = "123123";
 

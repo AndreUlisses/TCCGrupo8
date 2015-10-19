@@ -1,7 +1,7 @@
 package facade;
 
 import dao.UsuarioDao;
-import entidade.Usuario;
+import entity.Usuario;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +9,7 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.hibernate.HibernateException;
 
 public class UsuarioFacade {
 
@@ -41,10 +42,8 @@ public class UsuarioFacade {
 
     public void editar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Usuario usuario = new Usuario();
-        UsuarioDao usuarioDao = new UsuarioDao();
 
         usuario = requestForm(request);
-        usuario = usuarioDao.editar(usuario.getId());
 
         if (usuario != null) {
             request.setAttribute("usuario", usuario);
@@ -57,15 +56,13 @@ public class UsuarioFacade {
     }
 
     public void salvar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Usuario usuario = new Usuario();
-        UsuarioDao usuarioDao = new UsuarioDao();
+        try {
+            Usuario usuario = new Usuario();
 
-        usuario = requestForm(request);
-
-        if (usuarioDao.salvar(usuario) == -1) {
+            usuario = requestForm(request);
             RequestDispatcher rd = request.getRequestDispatcher("MensagemErro.jsp");
             rd.forward(request, response);
-        } else {
+        } catch (HibernateException ex) {
             RequestDispatcher rd = request.getRequestDispatcher("MensagemOk.jsp");
             rd.forward(request, response);
         }
@@ -73,14 +70,14 @@ public class UsuarioFacade {
 
     public void excluir(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Usuario usuario = new Usuario();
-        UsuarioDao usuarioDao = new UsuarioDao();
+        UsuarioDao dao = new UsuarioDao();
 
         usuario = requestForm(request);
-
-        if (usuarioDao.excluir(usuario)) {
+        try {
+            dao.excluir(usuario);
             RequestDispatcher rd = request.getRequestDispatcher("MensagemOk.jsp");
             rd.forward(request, response);
-        } else {
+        } catch (HibernateException ex) {
             RequestDispatcher rd = request.getRequestDispatcher("MensagemErro.jsp");
             rd.forward(request, response);
         }

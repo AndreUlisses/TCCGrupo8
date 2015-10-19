@@ -1,21 +1,37 @@
-package entidade;
+package entity;
 
+import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Temporal;
 
 
-
-public class Usuario {
-
+@Entity
+public class Usuario implements Serializable{
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String nome;
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date dataNascimento;
     private boolean sexo;
     private String user;
     private String email;
     private String senha;
-    
 
-        public String getNome() {
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getNome() {
         return nome;
     }
 
@@ -43,18 +59,8 @@ public class Usuario {
         return user;
     }
 
-    //Usuário, senha, e-mail, nome, sobrenome, data de nascimento, sexo, foto do perfil.
     public void setUser(String user) {
         this.user = user;
-    }
-    
-    
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getEmail() {
