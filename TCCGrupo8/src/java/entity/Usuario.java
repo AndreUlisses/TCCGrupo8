@@ -1,12 +1,12 @@
 package entity;
 
+import com.sun.istack.Nullable;
 import java.io.Serializable;
-import java.util.Date;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Temporal;
 
 
 @Entity
@@ -16,10 +16,7 @@ public class Usuario implements Serializable{
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String nome;
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date dataNascimento;
-    private boolean sexo;
-    private String user;
+    private String login;
     private String email;
     private String senha;
 
@@ -39,28 +36,12 @@ public class Usuario implements Serializable{
         this.nome = nome;
     }
 
-    public Date getDataNascimento() {
-        return dataNascimento;
+    public String getLogin() {
+        return login;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
-        this.dataNascimento = dataNascimento;
-    }
-
-    public boolean isSexo() {
-        return sexo;
-    }
-
-    public void setSexo(boolean sexo) {
-        this.sexo = sexo;
-    }
-
-    public String getUser() {
-        return user;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
+    public void setLogin(String login) {
+        this.login = login;
     }
 
     public String getEmail() {
@@ -78,5 +59,4 @@ public class Usuario implements Serializable{
     public void setSenha(String senha) {
         this.senha = senha;
     }
-    
 }

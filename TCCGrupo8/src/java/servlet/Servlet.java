@@ -5,8 +5,12 @@
  */
 package servlet;
 
+import dao.UsuarioDao;
+import entity.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -27,20 +31,42 @@ public class Servlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    protected void processRequest(
+            HttpServletRequest request,
+            HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        String action = request.getParameter("txtMetodo");
+        RequestDispatcher rd;
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Servlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet Servlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            String jspPage = action.equals("Cadastrar") ? "UsuarioIncluir" : "UsuarioListar";
+
+            if (action.equals("Cadastrar")) {
+                rd = request.getRequestDispatcher(jspPage + ".jsp");
+                rd.forward(request, response);
+            }
+
+            if (action.equals("Salvar")) {
+                Usuario usuario = new Usuario();
+                UsuarioDao dao = new UsuarioDao();
+
+                usuario.setLogin(request.getParameter("txtLogin"));
+                usuario.setNome(request.getParameter("txtNome"));
+                usuario.setEmail(request.getParameter("txtEmail"));
+                usuario.setSenha(request.getParameter("txtSenha"));
+                dao.saveOrUpdate(usuario);
+
+            }
+            if (action.equals("Listar")) {
+                UsuarioDao dao = new UsuarioDao();
+                List<Usuario> usuarios = dao.listar();
+                request.setAttribute("usuarios", usuarios);
+
+                rd = request.getRequestDispatcher(jspPage + ".jsp");
+                rd.forward(request, response);
+            }
+
         }
     }
 

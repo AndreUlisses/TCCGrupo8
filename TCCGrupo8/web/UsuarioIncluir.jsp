@@ -68,6 +68,14 @@
                     </div>
                 </div>
                 <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="txtLogin">Informe seu login</label>
+                            <input type="text" class="form-control" id="txtLogin" name="txtLogin" placeholder="Login">
+                        </div>    
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="txtEmail">Informe seu email</label>
