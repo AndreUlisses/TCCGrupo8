@@ -38,28 +38,44 @@ public class Servlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String action = request.getParameter("txtMetodo");
         RequestDispatcher rd;
+        UsuarioDao dao;
+        Usuario usuario = new Usuario();
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
             String jspPage = action.equals("Cadastrar") ? "UsuarioIncluir" : "UsuarioListar";
 
             if (action.equals("Cadastrar")) {
                 rd = request.getRequestDispatcher(jspPage + ".jsp");
                 rd.forward(request, response);
+                usuario = new Usuario();
             }
 
             if (action.equals("Salvar")) {
-                Usuario usuario = new Usuario();
-                UsuarioDao dao = new UsuarioDao();
-
+                dao = new UsuarioDao();
+                
+                usuario = (Usuario) request.getAttribute("usuario");
                 usuario.setLogin(request.getParameter("txtLogin"));
                 usuario.setNome(request.getParameter("txtNome"));
                 usuario.setEmail(request.getParameter("txtEmail"));
                 usuario.setSenha(request.getParameter("txtSenha"));
                 dao.saveOrUpdate(usuario);
 
+                List<Usuario> usuarios = dao.listar();
+                request.setAttribute("usuarios", usuarios);
+
+                rd = request.getRequestDispatcher("UsuarioListar" + ".jsp");
+                rd.forward(request, response);
+            }
+
+            if (action.equals("Editar")) {
+                dao = new UsuarioDao();
+                
+                usuario = dao.getById(Integer.parseInt(request.getParameter("txtId")));
+                request.setAttribute("usuario", usuario);
+                rd = request.getRequestDispatcher("UsuarioEditar" + ".jsp");
+                rd.forward(request, response);
             }
             if (action.equals("Listar")) {
-                UsuarioDao dao = new UsuarioDao();
+                dao = new UsuarioDao();
                 List<Usuario> usuarios = dao.listar();
                 request.setAttribute("usuarios", usuarios);
 
@@ -67,6 +83,17 @@ public class Servlet extends HttpServlet {
                 rd.forward(request, response);
             }
 
+            if (action.equals("Excluir")) {
+                dao = new UsuarioDao();
+                usuario = dao.getById(Integer.parseInt(request.getParameter("txtId")));
+                dao.excluir(usuario);
+
+                List<Usuario> usuarios = dao.listar();
+                request.setAttribute("usuarios", usuarios);
+
+                rd = request.getRequestDispatcher("UsuarioListar" + ".jsp");
+                rd.forward(request, response);
+            }
         }
     }
 

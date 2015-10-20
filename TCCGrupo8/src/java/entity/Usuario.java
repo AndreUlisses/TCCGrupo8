@@ -1,8 +1,6 @@
 package entity;
 
-import com.sun.istack.Nullable;
 import java.io.Serializable;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
