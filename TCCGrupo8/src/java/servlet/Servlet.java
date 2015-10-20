@@ -51,8 +51,11 @@ public class Servlet extends HttpServlet {
 
             if (action.equals("Salvar")) {
                 dao = new UsuarioDao();
-                
-                usuario = (Usuario) request.getAttribute("usuario");
+
+                if (request.getParameter("txtId") != null) {
+                    Usuario usuarioOLD = (Usuario) dao.getById(Integer.parseInt(request.getParameter("txtId")));
+                    usuario.setId(usuarioOLD.getId());
+                }
                 usuario.setLogin(request.getParameter("txtLogin"));
                 usuario.setNome(request.getParameter("txtNome"));
                 usuario.setEmail(request.getParameter("txtEmail"));
@@ -68,7 +71,7 @@ public class Servlet extends HttpServlet {
 
             if (action.equals("Editar")) {
                 dao = new UsuarioDao();
-                
+
                 usuario = dao.getById(Integer.parseInt(request.getParameter("txtId")));
                 request.setAttribute("usuario", usuario);
                 rd = request.getRequestDispatcher("UsuarioEditar" + ".jsp");
