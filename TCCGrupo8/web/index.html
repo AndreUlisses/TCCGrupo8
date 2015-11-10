@@ -40,46 +40,34 @@
                         <span class="icon-bar"></span>
                     </a>
                     <a class="brand" href="#">Iris</a>
-                    <div class="nav-collapse collapse">
-                        <ul class="nav">
-                            <li class="active"><a href="index.html">Principal</a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true">Usuários <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="javascript:CadastroUsuario();">Incluir</a></li>
-                                    <li><a href="javascript:ListarUsuario();">Listar</a></li>
-                                </ul>
-                            </li>                            
-                        </ul>
-                    </div><!--/.nav-collapse -->
                 </div>
             </div>
         </div>
-
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <label for="txtLogin">Informe seu login</label>
-                        <input type="text" class="form-control" id="txtLogin" name="txtLogin" placeholder="Login">
-                    </div>    
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="txtSenha">Informe sua senha</label>
-                        <input type="password" class="form-control" id="txtSenha" name="txtSenha" placeholder="Senha">
+                <div class="col-sm-6 col-md-4 col-md-offset-4">
+                    <h1 class="text-center login-title">Conecte-se</h1>
+                    <div class="account-wall">
+                        <form class="form-signin">
+                            <input type="text" class="form-control" placeholder="Login" required autofocus>
+                            <input type="password" class="form-control" placeholder="Senha" required>
+                            <label class="checkbox pull-left">
+                                <input type="checkbox" value="lembrar">
+                                Lembrar
+                            </label>
+                            <button class="btn btn-lg btn-primary btn-block" type="submit">
+                                Login</button>
+                        </form>
                     </div>
+                    <a href="#" class="">Criar conta</a>
                 </div>
-                <button type="reset">Limpar</button>
-                <button type="submit">Enviar</button>
             </div>
+        </div>
+        <form method="post" action="Servlet" name="frmPrincipal" id="frmPrincipal">
+            <input type="hidden" name="txtObjeto" id="txtObjeto" value="">
+            <input type="hidden" name="txtMetodo" id="txtMetodo" value="">
+        </form>
 
-            <form method="post" action="Servlet" name="frmPrincipal" id="frmPrincipal">
-                <input type="hidden" name="txtObjeto" id="txtObjeto" value="">
-                <input type="hidden" name="txtMetodo" id="txtMetodo" value="">
-            </form>
-
-        </div> <!-- /container -->
 
         <!-- Le javascript
         ================================================== -->
@@ -97,22 +85,5 @@
         <script src="include/js/bootstrap-collapse.js"></script>
         <script src="include/js/bootstrap-carousel.js"></script>
         <script src="include/js/bootstrap-typeahead.js"></script>
-
-        <script>
-
-            function CadastroUsuario() {
-                document.getElementById("txtObjeto").value = 'Usuario';
-                document.getElementById("txtMetodo").value = 'Cadastrar';
-                document.getElementById("frmPrincipal").submit();
-            }
-
-            function ListarUsuario() {
-                document.getElementById("txtObjeto").value = 'Usuario';
-                document.getElementById("txtMetodo").value = 'Listar';
-                document.getElementById("frmPrincipal").submit();
-            }
-
-        </script>
-
     </body>
 </html>
