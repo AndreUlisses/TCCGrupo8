@@ -63,7 +63,8 @@
 
                                 <div class="form-group">
                                     <label></label>
-                                    <a class="pull-right link_login" href="#">Esqueceu a senha?</a>  
+                                    <a class="pull-right link_login" href="#esqueciSenha" data-toggle="modal">Esqueceu a senha?</a>  
+                                    <a class="pull-left link_login" href="#cadastrarModal" data-toggle="modal">Registrar</a>  
                                 </div>  
 
                                 <div class="form-actions" style="text-align: center">
@@ -103,7 +104,92 @@
             </div>
         </div>
 
+        <div id="cadastrarModal" class="modal fade">
+            <div class="modal-open">
+                <div class="row vertical-offset-100">
+                    <div class="col-md-4 col-md-offset-4">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title">Cadastrar</h4>
+                            </div>
+                            <div class="container">
+                                <div class="modal-body">
+                                    <div class="container">
+                                        <form method="post" action="Servlet" name="frmPrincipal" id="frmPrincipal">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="txtNome">Informe seu nome</label>
+                                                        <input type="text" class="form-control" id="txtNome" name="txtNome" placeholder="Nome">
+                                                    </div>    
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="txtEmail">Informe seu email</label>
+                                                        <input type="email" class="form-control" id="txtEmail" name="txtEmail" placeholder="Email">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="txtSenha">Informe sua senha</label>
+                                                        <input type="password" class="form-control" id="txtSenha" name="txtSenha" placeholder="Senha">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button type="reset" class="btn btn-default btn-lg">Limpar</button>
+                                            <button type="submit" class="btn btn-default btn-lg">Enviar</button>
 
+                                            <input type="hidden" name="txtObjeto" id="txtObjeto" value="Usuario">
+                                            <input type="hidden" name="txtMetodo" id="txtMetodo" value="Salvar">
+                                        </form>
+                                    </div> <!-- /container -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="esqueciSenha" class="modal fade">
+            <div class="modal-open">
+                <div class="row vertical-offset-100">
+                    <div class="col-md-4 col-md-offset-4">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title">Esqueci minha senha</h4>
+                            </div>
+                            <div class="container">
+                                <div class="modal-body">
+                                    <div class="container">
+                                        <form method="post" action="Servlet" name="frmPrincipal" id="frmPrincipal">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="txtEmail">Informe seu email</label>
+                                                        <input type="email" class="form-control" id="txtEmail" name="txtEmail" placeholder="Email">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-default btn-lg">Enviar</button>
+
+                                            <input type="hidden" name="txtObjeto" id="txtObjeto" value="Usuario">
+                                            <input type="hidden" name="txtMetodo" id="txtMetodo" value="Salvar">
+                                        </form>
+                                    </div> <!-- /container -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- Le javascript
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
@@ -121,7 +207,15 @@
         <script src="include/js/bootstrap-carousel.js"></script>
         <script src="include/js/bootstrap-typeahead.js"></script>
 
+        <script>
+            function CadastroUsuario() {
+                document.getElementById("txtObjeto").value = 'Usuario';
+                document.getElementById("txtMetodo").value = 'Cadastrar';
+                document.getElementById("frmPrincipal").submit();
+            }
+        </script>
         <script type="text/javascript">
+
             $(document).ready(function () {
 
                 $('#email').focus();
