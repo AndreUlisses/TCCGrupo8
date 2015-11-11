@@ -84,14 +84,14 @@
         </div>
 
 
-        <a href="http://sis.conceitual.inf.br/#notification" id="call-modal" role="button" class="btn" data-toggle="modal" style="display: none ">notification</a>
+        <a href="iris/#notification" id="call-modal" role="button" class="btn" data-toggle="modal" style="display: none ">notification</a>
 
         <div id="notification" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content"> 
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                        <h4 id="myModalLabel">Conceitual</h4>
+                        <h4 id="myModalLabel">Iris</h4>
                     </div>
                     <div class="modal-body">
                         <h5 style="text-align: center">Os dados de acesso estão incorretos, por favor tente novamente!</h5>
@@ -139,13 +139,13 @@
 
                         $.ajax({
                             type: "POST",
-                            url: "http://sis.conceitual.inf.br/sistema/logar?ajax=true",
+                            url: "iris/logar?ajax=true",
                             data: dados,
                             dataType: 'json',
                             success: function (data)
                             {
                                 if (data.result === true) {
-                                    window.location.href = "http://sis.conceitual.inf.br/sistema";
+                                    window.location.href = "iris/sistema";
                                 }
                                 else {
                                     $('#call-modal').trigger('click');
