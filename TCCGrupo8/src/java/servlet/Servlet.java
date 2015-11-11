@@ -38,7 +38,7 @@ public class Servlet extends HttpServlet {
                 usuario.setEmail(request.getParameter("txtEmail"));
                 usuario.setSenha(request.getParameter("txtSenha"));
                 dao.saveOrUpdate(usuario);
-                rd.forward(request, response);
+                response.sendRedirect("");
             }
         }
     }
