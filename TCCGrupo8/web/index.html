@@ -85,8 +85,7 @@
         </div>
 
 
-        <a href="iris/#notification" id="call-modal" role="button" class="btn" data-toggle="modal" style="display: none ">notification</a>
-
+<!--        <a href="iris/#notification" id="call-modal" role="button" class="btn" data-toggle="modal" style="display: none ">notification</a>
         <div id="notification" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content"> 
@@ -102,7 +101,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
 
         <div id="cadastrarModal" class="modal fade">
             <div class="modal-open">
@@ -142,10 +141,10 @@
                                                 </div>
                                             </div>
                                             <button type="reset" class="btn btn-default btn-lg">Limpar</button>
-                                            <button type="submit" class="btn btn-default btn-lg">Enviar</button>
+                                            <button type="submit"  class="btn btn-default btn-lg">Cadastrar</button>
 
                                             <input type="hidden" name="txtObjeto" id="txtObjeto" value="Usuario">
-                                            <input type="hidden" name="txtMetodo" id="txtMetodo" value="Salvar">
+                                            <input type="hidden" name="txtMetodo" id="txtMetodo" value="Cadastrar">
                                         </form>
                                     </div> <!-- /container -->
                                 </div>
@@ -168,19 +167,16 @@
                             <div class="container">
                                 <div class="modal-body">
                                     <div class="container">
-                                        <form method="post" action="Servlet" name="frmPrincipal" id="frmPrincipal">
+                                        <form method="post" action="Servlet" name="frmEsqueceuSenha" id="frmEsqueceuSenha">
                                             <div class="row">
                                                 <div class="col-md-4">
                                                     <div class="form-group">
-                                                        <label for="txtEmail">Informe seu email</label>
-                                                        <input type="email" class="form-control" id="txtEmail" name="txtEmail" placeholder="Email">
+                                                        <label for="txtEmailEqueceuSenha">Informe seu email</label>
+                                                        <input type="email" class="form-control" id="txtEmailEqueceuSenha" name="txtEmailEqueceuSenha" placeholder="Email">
                                                     </div>
                                                 </div>
                                             </div>
                                             <button type="submit" class="btn btn-default btn-lg">Enviar</button>
-
-                                            <input type="hidden" name="txtObjeto" id="txtObjeto" value="Usuario">
-                                            <input type="hidden" name="txtMetodo" id="txtMetodo" value="Salvar">
                                         </form>
                                     </div> <!-- /container -->
                                 </div>
@@ -216,7 +212,7 @@
         </script>
         <script type="text/javascript">
 
-            $(document).ready(function () {
+            $(document).ready(function() {
 
                 $('#email').focus();
                 $("#formLogin").validate({
@@ -228,7 +224,7 @@
                         email: {required: '', email: ''},
                         senha: {required: ''}
                     },
-                    submitHandler: function (form) {
+                    submitHandler: function(form) {
                         var dados = $(form).serialize();
 
                         $.ajax({
@@ -236,7 +232,7 @@
                             url: "iris/logar?ajax=true",
                             data: dados,
                             dataType: 'json',
-                            success: function (data)
+                            success: function(data)
                             {
                                 if (data.result === true) {
                                     window.location.href = "iris/sistema";
@@ -251,12 +247,12 @@
                     },
                     errorClass: "help-block",
                     errorElement: "span",
-                    highlight: function (element, errorClass, validClass) {
+                    highlight: function(element, errorClass, validClass) {
                         $(element).parents('.form-group').addClass('has-error');
                         $(element).parents(".input-group-addon").addClass("danger");
                         $(".input-group-addon").attr("title", "Existe(m) erro(s) no(s) campo(s) em vermelho. Verifique!");
                     },
-                    unhighlight: function (element, errorClass, validClass) {
+                    unhighlight: function(element, errorClass, validClass) {
                         $(element).parents('.form-group').removeClass('has-error');
                         $(element).parents('.form-group').addClass('has-success');
                         $(element).parents(".input-group-addon").removeClass("danger");

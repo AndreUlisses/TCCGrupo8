@@ -12,34 +12,26 @@ public class Usuario implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Integer idUsuario;
+
     private String nome;
-    private String login;
     private String email;
     private String senha;
 
-    public Integer getId() {
-        return id;
+    public Integer getIdUsuario() {
+        return idUsuario;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setIdUsuario(Integer idUsuario) {
+        this.idUsuario = idUsuario;
     }
-
+    
     public String getNome() {
         return nome;
     }
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
     }
 
     public String getEmail() {

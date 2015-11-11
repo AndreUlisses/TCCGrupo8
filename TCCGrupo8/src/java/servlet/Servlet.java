@@ -22,79 +22,22 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class Servlet extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(
             HttpServletRequest request,
             HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String action = request.getParameter("txtMetodo");
-        RequestDispatcher rd;
+        RequestDispatcher rd = request.getRequestDispatcher("index.html");
         UsuarioDao dao;
         Usuario usuario = new Usuario();
         try (PrintWriter out = response.getWriter()) {
-            String jspPage = action.equals("Cadastrar") ? "UsuarioIncluir" : "UsuarioListar";
-
             if (action.equals("Cadastrar")) {
-                rd = request.getRequestDispatcher(jspPage + ".jsp");
-                rd.forward(request, response);
-                usuario = new Usuario();
-            }
-
-            if (action.equals("Salvar")) {
                 dao = new UsuarioDao();
-
-                if (request.getParameter("txtId") != null) {
-                    Usuario usuarioOLD = (Usuario) dao.getById(Integer.parseInt(request.getParameter("txtId")));
-                    usuario.setId(usuarioOLD.getId());
-                }
-                usuario.setLogin(request.getParameter("txtLogin"));
                 usuario.setNome(request.getParameter("txtNome"));
                 usuario.setEmail(request.getParameter("txtEmail"));
                 usuario.setSenha(request.getParameter("txtSenha"));
                 dao.saveOrUpdate(usuario);
-
-                List<Usuario> usuarios = dao.listar();
-                request.setAttribute("usuarios", usuarios);
-
-                rd = request.getRequestDispatcher("UsuarioListar" + ".jsp");
-                rd.forward(request, response);
-            }
-
-            if (action.equals("Editar")) {
-                dao = new UsuarioDao();
-
-                usuario = dao.getById(Integer.parseInt(request.getParameter("txtId")));
-                request.setAttribute("usuario", usuario);
-                rd = request.getRequestDispatcher("UsuarioEditar" + ".jsp");
-                rd.forward(request, response);
-            }
-            if (action.equals("Listar")) {
-                dao = new UsuarioDao();
-                List<Usuario> usuarios = dao.listar();
-                request.setAttribute("usuarios", usuarios);
-
-                rd = request.getRequestDispatcher(jspPage + ".jsp");
-                rd.forward(request, response);
-            }
-
-            if (action.equals("Excluir")) {
-                dao = new UsuarioDao();
-                usuario = dao.getById(Integer.parseInt(request.getParameter("txtId")));
-                dao.excluir(usuario);
-
-                List<Usuario> usuarios = dao.listar();
-                request.setAttribute("usuarios", usuarios);
-
-                rd = request.getRequestDispatcher("UsuarioListar" + ".jsp");
                 rd.forward(request, response);
             }
         }
