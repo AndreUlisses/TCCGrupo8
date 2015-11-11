@@ -1,0 +1,153 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 28/05/2015, 18:30:47
+    Author     : Marcio
+*/
+
+body {
+        background-color: #444;
+        background: url(../img/fundo-1141x759.jpg);
+        
+    }
+    .form-signin input[type="text"] {
+        margin-bottom: 5px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    .form-signin input[type="password"] {
+        margin-bottom: 10px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+    .form-signin .form-control {
+        position: relative;
+        font-size: 16px;
+        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+        height: auto;
+        padding: 10px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .vertical-offset-100 {
+        padding-top: 100px;
+    }
+    .img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+    }
+    .panel {
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.75);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    }
+    
+.link_login, a:link, a:visited, a:active {
+    text-decoration: none;
+    color: #3F4B55;
+    font-weight:bold;
+    font-size:12px;
+}
+
+.texto_rs
+{
+    color: #3F4B55;
+    font-weight:bold;
+    font-size:12px;
+    text-align: center;
+}
+
+.input-group-addon.primary {
+    color: rgb(255, 255, 255);
+    background-color: rgb(50, 118, 177);
+    border-color: rgb(40, 94, 142);
+}
+.input-group-addon.success {
+    color: rgb(255, 255, 255);
+    background-color: rgb(92, 184, 92);
+    border-color: rgb(76, 174, 76);
+}
+.input-group-addon.info {
+    color: rgb(255, 255, 255);
+    background-color: rgb(57, 179, 215);
+    border-color: rgb(38, 154, 188);
+}
+.input-group-addon.warning {
+    color: rgb(255, 255, 255);
+    background-color: rgb(240, 173, 78);
+    border-color: rgb(238, 162, 54);
+}
+.input-group-addon.danger {
+    color: rgb(255, 255, 255);
+    background-color: rgb(217, 83, 79);
+    border-color: rgb(212, 63, 58);
+}
+
+/*FOOTER*/
+ul
+{ list-style:none; }
+
+.li
+{ color:#3bc0f3;
+  text-decoration:none;
+  color:#FFF;
+  font-size:12px;
+  line-height:14px;
+  font-weight:normal;
+  font-weight:bold; }
+
+#footer
+{ position:fixed;
+  bottom:0;
+  min-width:974px;
+  width:100%;
+  background:#202020;
+  border:none;
+  padding-top:15px;
+  padding-bottom:5px;
+  padding-left:15px;
+  padding-right:0;
+  text-align:center; }
+
+
+#footer #copyright,#footer #nav-legal
+{ color:#fff;
+  display:-moz-inline-stack;
+  display:inline-block;
+  font-weight:bold;
+  font-size:12px;
+  line-height:14px;
+  font-weight:normal;
+  vertical-align:middle;
+  *vertical-align:auto;
+  zoom:1;
+  *display:inline; }
+
+#footer #copyright>li,#footer #nav-legal>li
+{ border:none;
+  margin-left:25px;
+  margin-right:0; }
+
+#footer #copyright a,#footer #nav-legal a
+{ color:#3bc0f3;
+  text-decoration:none;
+  color:#FFF;
+  font-size:12px;
+  line-height:14px;
+  font-weight:normal;
+  font-weight:bold; }
+
+#footer #copyright a.hover,#footer #copyright a:hover,#footer #copyright a.focus,#footer #copyright a:focus,#footer #nav-legal a.hover,#footer #nav-legal a:hover,#footer #nav-legal a.focus,#footer #nav-legal a:focus
+{ text-decoration:none; }
+
+#footer #copyright a.visited,#footer #copyright a:visited,#footer #nav-legal a.visited,#footer #nav-legal a:visited
+{ color:#96999c; }

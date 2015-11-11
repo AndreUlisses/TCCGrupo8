@@ -7,79 +7,102 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
+
+        <!-- conceitual -->
+        <script src="include/js/jquery-1.11.3.min.js"></script>
+        <script src="include/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="include/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="include/css/login_novo.css"> 
+        <script src="inclue/js/jquery-validate.js"></script>
+        <script src="inclue/js/parsley.js"></script>
+        <link href="include/css/parsley.css" rel="stylesheet">
+        <!-- conceitual -->
         <!-- Le styles -->
-        <link href="include/css/bootstrap.css" rel="stylesheet">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
         <style>
             body {
-                padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+                margin: 0;
+                background: url('include/img/iris-wallpaper.jpg');
+                background-size: 1440px 800px;
+                background-repeat:no-repeat;
+                display: compact;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
             }
         </style>
-        <link href="include/css/bootstrap-responsive.css" rel="stylesheet">
-
-        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-        <!--[if lt IE 9]>
-          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-
-        <!-- Fav and touch icons -->
-        <link rel="shortcut icon" href="include/img/favicon.ico">
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="include/img/apple-touch-icon-144-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="include/img/apple-touch-icon-114-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="include/img/apple-touch-icon-72-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" href="include/img/apple-touch-icon-57-precomposed.png">
     </head>
 
     <body>
+        <div class="container">
+            <div class="row vertical-offset-100">
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">                                
+                            <div class="row-fluid user-row">
+                                <img src="include/img/iris-logo.png" class="img-responsive" alt="Iris">
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <form id="formLogin" class="form-vertical" method="post" action="" novalidate="novalidate">        
 
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </a>
-                    <a class="brand" href="#">Iris</a>
-                    <div class="nav-collapse collapse">
-                        <ul class="nav">
-                            <li class="active"><a href="index.html">Principal</a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true">Usuários <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="javascript:CadastroUsuario();">Incluir</a></li>
-                                    <li><a href="javascript:ListarUsuario();">Listar</a></li>
-                                </ul>
-                            </li>                            
-                        </ul>
-                    </div><!--/.nav-collapse -->
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span id="span-email" class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                        <input id="email" name="email" type="email" placeholder="Email" class="form-control"> 
+                                    </div>      
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span id="span-senha" class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                        <input name="senha" type="password" placeholder="Senha" class="form-control" required="" aria-required="true">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label></label>
+                                    <a class="pull-right link_login" href="#">Esqueceu a senha?</a>  
+                                </div>  
+
+                                <div class="form-actions" style="text-align: center">
+                                    <button id="btAcessar" class="btn btn-primary btn-block">Acessar</button>
+                                </div>
+                            </form>          
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <label for="txtLogin">Informe seu login</label>
-                        <input type="text" class="form-control" id="txtLogin" name="txtLogin" placeholder="Login">
-                    </div>    
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="txtSenha">Informe sua senha</label>
-                        <input type="password" class="form-control" id="txtSenha" name="txtSenha" placeholder="Senha">
+
+        <div id="footer" class="remote-nav">
+            <div class="wrapper">
+                <p id="copyright" class="guest"><span>Iris Communication</span> <em>© 2015</em></p>
+            </div>
+        </div>
+
+
+        <a href="http://sis.conceitual.inf.br/#notification" id="call-modal" role="button" class="btn" data-toggle="modal" style="display: none ">notification</a>
+
+        <div id="notification" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content"> 
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 id="myModalLabel">Conceitual</h4>
+                    </div>
+                    <div class="modal-body">
+                        <h5 style="text-align: center">Os dados de acesso estão incorretos, por favor tente novamente!</h5>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Fechar</button>
                     </div>
                 </div>
-                <button type="reset">Limpar</button>
-                <button type="submit">Enviar</button>
             </div>
+        </div>
 
-            <form method="post" action="Servlet" name="frmPrincipal" id="frmPrincipal">
-                <input type="hidden" name="txtObjeto" id="txtObjeto" value="">
-                <input type="hidden" name="txtMetodo" id="txtMetodo" value="">
-            </form>
-
-        </div> <!-- /container -->
 
         <!-- Le javascript
         ================================================== -->
@@ -98,20 +121,56 @@
         <script src="include/js/bootstrap-carousel.js"></script>
         <script src="include/js/bootstrap-typeahead.js"></script>
 
-        <script>
+        <script type="text/javascript">
+            $(document).ready(function () {
 
-            function CadastroUsuario() {
-                document.getElementById("txtObjeto").value = 'Usuario';
-                document.getElementById("txtMetodo").value = 'Cadastrar';
-                document.getElementById("frmPrincipal").submit();
-            }
+                $('#email').focus();
+                $("#formLogin").validate({
+                    rules: {
+                        email: {required: true, email: true},
+                        senha: {required: true}
+                    },
+                    messages: {
+                        email: {required: '', email: ''},
+                        senha: {required: ''}
+                    },
+                    submitHandler: function (form) {
+                        var dados = $(form).serialize();
 
-            function ListarUsuario() {
-                document.getElementById("txtObjeto").value = 'Usuario';
-                document.getElementById("txtMetodo").value = 'Listar';
-                document.getElementById("frmPrincipal").submit();
-            }
+                        $.ajax({
+                            type: "POST",
+                            url: "http://sis.conceitual.inf.br/sistema/logar?ajax=true",
+                            data: dados,
+                            dataType: 'json',
+                            success: function (data)
+                            {
+                                if (data.result === true) {
+                                    window.location.href = "http://sis.conceitual.inf.br/sistema";
+                                }
+                                else {
+                                    $('#call-modal').trigger('click');
+                                }
+                            }
+                        });
 
+                        return false;
+                    },
+                    errorClass: "help-block",
+                    errorElement: "span",
+                    highlight: function (element, errorClass, validClass) {
+                        $(element).parents('.form-group').addClass('has-error');
+                        $(element).parents(".input-group-addon").addClass("danger");
+                        $(".input-group-addon").attr("title", "Existe(m) erro(s) no(s) campo(s) em vermelho. Verifique!");
+                    },
+                    unhighlight: function (element, errorClass, validClass) {
+                        $(element).parents('.form-group').removeClass('has-error');
+                        $(element).parents('.form-group').addClass('has-success');
+                        $(element).parents(".input-group-addon").removeClass("danger");
+                        $(element).parents(".input-group-addon").addClass("success");
+                    }
+                });
+
+            });
         </script>
 
     </body>
