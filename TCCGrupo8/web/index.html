@@ -34,7 +34,7 @@
     </head>
 
     <body>
-        <div class="container">
+        <div class="container" id="principal">
             <div class="row vertical-offset-100">
                 <div class="col-md-4 col-md-offset-4">
                     <div class="panel panel-default">
@@ -114,7 +114,7 @@
                             </div>
                             <div class="container">
                                 <div class="modal-body">
-                                    <div class="container">
+                                    <div class="container" id="paginacadastro">
                                         <form method="post" action="Servlet" name="frmPrincipal" id="frmPrincipal">
                                             <div class="row">
                                                 <div class="col-md-4">
@@ -141,7 +141,7 @@
                                                 </div>
                                             </div>
                                             <button type="reset" class="btn btn-default btn-lg">Limpar</button>
-                                            <button id="cadastrar" type="submit"  class="btn btn-default btn-lg">Cadastrar</button>
+                                            <button id="cadastrar" type="button"  class="btn btn-default btn-lg">Cadastrar</button>
 
                                             <input type="hidden" name="txtObjeto" id="txtObjeto" value="Usuario">
                                             <input type="hidden" name="txtMetodo" id="txtMetodo" value="Cadastrar">
@@ -204,6 +204,26 @@
         <script src="include/js/bootstrap-typeahead.js"></script>
 
         <script>
+            $("#cadastrar").click(function() {
+                 $("#principal").load("Servlet", {
+                    //variaveis de controle
+                    txtObjeto: 'Usuario'
+                    , txtMetodo: 'Cadastrar'
+                    , txtSenha: document.getElementById("txtSenha").value
+                    , txtNome: document.getElementById("txtNome").value
+                    , txtEmail: document.getElementById("txtEmail").value
+                    , txtApelido: 'teste'
+                     
+                }, function (responseTxt, statusTxt, xhr) {
+                    if (statusTxt == "error") {
+                        alert("Error: " + xhr.status + ": " + xhr.statusText);
+                    }
+                });
+            });
+           
+            
+            
+            /*
             function CadastroUsuario() {
                 document.getElementById("txtObjeto").value = 'Usuario';
                 document.getElementById("txtMetodo").value = 'Cadastrar';
@@ -226,10 +246,12 @@
                             });
                 });
             });
+            
             function printSucess() {
                 $("#feedbackCadastro").append("Cadastro feito com sucesso!");
             }
             ;
+            */
         </script>
         <script type="text/javascript">
 

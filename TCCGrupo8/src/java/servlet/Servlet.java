@@ -38,7 +38,7 @@ public class Servlet extends HttpServlet {
                 usuario.setEmail(request.getParameter("txtEmail"));
                 usuario.setSenha(request.getParameter("txtSenha"));
                 dao.saveOrUpdate(usuario);
-                String text = "some text";
+                String text = "Cadastro de usuario feito com sucesso";
                 response.setContentType("application/json");
                 response.setCharacterEncoding("UTF-8");
                 response.getWriter().write(text);
