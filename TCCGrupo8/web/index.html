@@ -43,7 +43,7 @@
                             </div>
                         </div>
                         <div class="panel-body">
-                            <form id="formLogin" class="form-vertical" method="post" action="" novalidate="novalidate">        
+                            <form id="formLogin" class="form-vertical" method="post" action="./dashboard.html" novalidate="novalidate">        
 
                                 <div class="form-group">
                                     <div class="input-group">
@@ -66,7 +66,7 @@
                                 </div>  
 
                                 <div class="form-actions" style="text-align: center">
-                                    <button id="btAcessar" class="btn btn-primary btn-block">Acessar</button>
+                                    <button id="btAcessar" class="btn btn-primary btn-block" >Acessar</button>
                                 </div>
                             </form>          
                         </div>
@@ -83,23 +83,23 @@
         </div>
 
 
-<!--        <a href="iris/#notification" id="call-modal" role="button" class="btn" data-toggle="modal" style="display: none ">notification</a>
-        <div id="notification" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content"> 
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                        <h4 id="myModalLabel">Iris</h4>
+        <!--        <a href="iris/#notification" id="call-modal" role="button" class="btn" data-toggle="modal" style="display: none ">notification</a>
+                <div id="notification" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content"> 
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                <h4 id="myModalLabel">Iris</h4>
+                            </div>
+                            <div class="modal-body">
+                                <h5 style="text-align: center">Os dados de acesso estão incorretos, por favor tente novamente!</h5>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Fechar</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="modal-body">
-                        <h5 style="text-align: center">Os dados de acesso estão incorretos, por favor tente novamente!</h5>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Fechar</button>
-                    </div>
-                </div>
-            </div>
-        </div>-->
+                </div>-->
 
         <div id="cadastrarModal" class="modal fade">
             <div class="modal-open">
@@ -202,15 +202,20 @@
         <script src="include/js/bootstrap-typeahead.js"></script>
 
         <script>
-            function CadastroUsuario() {
-                document.getElementById("txtObjeto").value = 'Usuario';
-                document.getElementById("txtMetodo").value = 'Cadastrar';
-                document.getElementById("frmPrincipal").submit();
-            }
+                                        function CadastroUsuario() {
+                                            document.getElementById("txtObjeto").value = 'Usuario';
+                                            document.getElementById("txtMetodo").value = 'Cadastrar';
+                                            document.getElementById("frmPrincipal").submit();
+                                        }
+                                        function redirect()
+                                        {
+                                            var url = "http://www.google.com";
+                                            window.location(url);
+                                        }
         </script>
         <script type="text/javascript">
 
-            $(document).ready(function() {
+            $(document).ready(function () {
 
                 $('#email').focus();
                 $("#formLogin").validate({
@@ -222,7 +227,7 @@
                         email: {required: '', email: ''},
                         senha: {required: ''}
                     },
-                    submitHandler: function(form) {
+                    submitHandler: function (form) {
                         var dados = $(form).serialize();
 
                         $.ajax({
@@ -230,7 +235,7 @@
                             url: "iris/logar?ajax=true",
                             data: dados,
                             dataType: 'json',
-                            success: function(data)
+                            success: function (data)
                             {
                                 if (data.result === true) {
                                     window.location.href = "iris/sistema";
@@ -245,12 +250,12 @@
                     },
                     errorClass: "help-block",
                     errorElement: "span",
-                    highlight: function(element, errorClass, validClass) {
+                    highlight: function (element, errorClass, validClass) {
                         $(element).parents('.form-group').addClass('has-error');
                         $(element).parents(".input-group-addon").addClass("danger");
                         $(".input-group-addon").attr("title", "Existe(m) erro(s) no(s) campo(s) em vermelho. Verifique!");
                     },
-                    unhighlight: function(element, errorClass, validClass) {
+                    unhighlight: function (element, errorClass, validClass) {
                         $(element).parents('.form-group').removeClass('has-error');
                         $(element).parents('.form-group').addClass('has-success');
                         $(element).parents(".input-group-addon").removeClass("danger");
