@@ -154,7 +154,7 @@
         <script src="include/js/bootstrap-carousel.js"></script>
         <script src="include/js/bootstrap-typeahead.js"></script>
 
-        <script type="text/javascript">
+           <script type="text/javascript">
             $("#cadastrar").click(function () {
                 $("#feedbackCadastro").load("Servlet", {
                     txtObjeto: 'Usuario'
