@@ -28,11 +28,12 @@ public class Servlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String action = request.getParameter("txtMetodo");
+        HttpSession session = request.getSession();
         UsuarioDao dao;
         Usuario usuario = new Usuario();
+        dao = new UsuarioDao();
         try (PrintWriter out = response.getWriter()) {
             if (action.equals("Cadastrar")) {
-                dao = new UsuarioDao();
                 usuario.setNome(request.getParameter("txtNome"));
                 usuario.setEmail(request.getParameter("txtEmail"));
                 usuario.setSenha(request.getParameter("txtSenha"));
@@ -45,10 +46,29 @@ public class Servlet extends HttpServlet {
                     feedback = false;
                 } catch (Exception e) {
                     feedback = false;
-                } 
+                }
 
-                HttpSession session = request.getSession();
                 session.setAttribute("feedback", feedback);
+            }
+            else if (action.equals("Logar")) {
+                usuario.setEmail(request.getParameter("txtEmail"));
+                usuario.setSenha(request.getParameter("txtSenha"));
+
+                usuario = dao.getAutenticacao(usuario.getEmail(), usuario.getSenha());
+
+                if (usuario != null) {
+                    response.sendRedirect("dashboard.jsp");
+                    session.setAttribute("nomeUsuario", usuario.getNome());
+                    session.setAttribute("usuarioLogado", usuario);
+                } else {
+                    response.sendRedirect("index.jsp");
+                }
+            } else {
+                if (session.getAttribute("usuarioLogado") != null) {
+                    usuario = (Usuario) session.getAttribute("usuarioLogado");
+                } else {
+                    response.sendRedirect("index.jsp");
+                }
             }
         }
     }

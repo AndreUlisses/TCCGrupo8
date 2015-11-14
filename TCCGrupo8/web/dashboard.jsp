@@ -1,3 +1,10 @@
+<%-- 
+    Document   : dashboard
+    Created on : 14/11/2015, 03:16:19
+    Author     : Matheus
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -33,6 +40,13 @@
         <!-- ================== END BASE JS ================== -->
         <style>.cke{visibility:hidden;}</style>
     </head>
+    <%
+        String nomeUsuario = (String) session.getAttribute("usuarioAutenticado");
+
+        if (nomeUsuario == null) {
+            throw new ServletException("Não há usuário logado");
+        }
+    %>
     <body class=" pace-done">
         <div class="pace  pace-inactive">
             <div class="pace-progress" data-progress-text="100%" data-progress="99" style="width: 100%;">
@@ -70,7 +84,7 @@
                                 </div>
                             </form>
                         </li>
-                        <li class="dropdown navbar-user"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <img src="include/img/usuario.jpg" width="100" height="100" alt=""> <span class="hidden-xs">Matheus dos Santos Fraga</span>
+                        <li class="dropdown navbar-user"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <img src="include/img/usuario.jpg" width="100" height="100" alt=""> <span class="hidden-xs"> <%=nomeUsuario%></span>
                                 <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu animated fadeInLeft">
@@ -92,7 +106,7 @@
                                     <a href="javascript:;"><img src="include/img/usuario.jpg" width="100" height="100" alt=""></a>
                                 </div>
                                 <div class="info">
-                                    Matheus							<small>Semi-deus</small>
+                                    <%=nomeUsuario%>
                                 </div>
                             </li>
                         </ul>

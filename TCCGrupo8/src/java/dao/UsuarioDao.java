@@ -4,6 +4,7 @@ import entity.Usuario;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
 
 public class UsuarioDao {
 
@@ -44,14 +45,21 @@ public class UsuarioDao {
         List<Usuario> usuarioList;
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.getTransaction().begin();
-        
+
         Query query = session.createQuery("from entity.Usuario");
         usuarioList = query.list();
-        
+
         session.getTransaction().commit();
         session.clear();
 
         return usuarioList;
     }
 
+    public Usuario getAutenticacao(String email, String senha) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.getTransaction();
+        Query query = session.createQuery("FROM usuario "
+                + "WHERE usuario.email =: email AND uuario.senha =: senha");
+        return (Usuario) query.uniqueResult();  
+    }
 }

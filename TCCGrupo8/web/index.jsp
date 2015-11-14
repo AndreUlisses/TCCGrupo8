@@ -45,31 +45,33 @@
                             </div>
                         </div>
                         <div class="panel-body">
-                            <form id="formLogin" class="form-vertical" method="post" action="./dashboard.html" novalidate="novalidate">        
+                            <form id="formLogin" class="form-vertical" method="post" action="" novalidate="novalidate">        
 
                                 <div class="form-group">
                                     <div class="input-group">
                                         <span id="span-email" class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                        <input id="email" name="email" type="email" placeholder="Email" class="form-control"> 
+                                        <input id="emailLogin" name="email" type="email" placeholder="Email" class="form-control"> 
                                     </div>      
                                 </div>
 
                                 <div class="form-group">
                                     <div class="input-group">
                                         <span id="span-senha" class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                        <input name="senha" type="password" placeholder="Senha" class="form-control" required="" aria-required="true">
+                                        <input id="senhaLogin" name="senha" type="password" placeholder="Senha" class="form-control" required="" aria-required="true">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label></label>
-                                    <a class="pull-right link_login" href="#esqueciSenha" data-toggle="modal">Esqueceu a senha?</a>  
                                     <a class="pull-left link_login" href="#cadastrarModal" data-toggle="modal">Registrar</a>  
                                 </div>  
 
                                 <div class="form-actions" style="text-align: center">
-                                    <button id="btAcessar" class="btn btn-primary btn-block" >Acessar</button>
+                                    <button id="btnAcessar" class="btn btn-primary btn-block" >Acessar</button>
                                 </div>
+
+                                <input type="hidden" name="txtObjeto" id="txtObjeto" value="Usuario">
+                                <input type="hidden" name="txtMetodo" id="txtMetodo" value="Logar">
                             </form>          
                         </div>
                     </div>
@@ -143,7 +145,7 @@
                                                 </div>
                                             </div>
                                             <button type="reset" class="btn btn-default btn-lg">Limpar</button>
-                                            <button id="cadastrar" type="button"  class="btn btn-default btn-lg">Cadastrar</button>
+                                            <button id="cadastrar" type="button"  class="btn btn-default btn-lg" >Cadastrar</button>
 
                                             <input type="hidden" name="txtObjeto" id="txtObjeto" value="Usuario">
                                             <input type="hidden" name="txtMetodo" id="txtMetodo" value="Cadastrar">
@@ -157,39 +159,8 @@
             </div>
         </div>
 
-        <div id="esqueciSenha" class="modal fade">
-            <div class="modal-open">
-                <div class="row vertical-offset-100">
-                    <div class="col-md-4 col-md-offset-4">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                <h4 class="modal-title">Esqueci minha senha</h4>
-                            </div>
-                            <div class="container">
-                                <div class="modal-body">
-                                    <div class="container">
-                                        <form method="post" action="Servlet" name="frmEsqueceuSenha" id="frmEsqueceuSenha">
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <label for="txtEmailEqueceuSenha">Informe seu email</label>
-                                                        <input type="email" class="form-control" id="txtEmailEqueceuSenha" name="txtEmailEqueceuSenha" placeholder="Email">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <button type="submit" class="btn btn-default btn-lg">Enviar</button>
-                                        </form>
-                                    </div> <!-- /container -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Le javascript
-        ================================================== -->
+                <!-- Le javascript
+                ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
         <script src="include/js/jquery.js"></script>
         <script src="include/js/bootstrap-transition.js"></script>
@@ -206,78 +177,74 @@
         <script src="include/js/bootstrap-typeahead.js"></script>
 
         <script>
-            $("#cadastrar").click(function () {
-                $("#feedbackCadastro").load("Servlet", {
-                    txtObjeto: 'Usuario'
-                    , txtMetodo: 'Cadastrar'
-                    , txtSenha: document.getElementById("txtSenha").value
-                    , txtNome: document.getElementById("txtNome").value
-                    , txtEmail: document.getElementById("txtEmail").value
+                $("#cadastrar").click(function () {
+                    $("#feedbackCadastro").load("Servlet", {
+                        txtObjeto: 'Usuario'
+                        , txtMetodo: 'Cadastrar'
+                        , txtSenha: document.getElementById("txtSenha").value
+                        , txtNome: document.getElementById("txtNome").value
+                        , txtEmail: document.getElementById("txtEmail").value
 
-                }, function () {
-                    var feedback = ${feedback}
-                    if (feedback) {
-                        $("#feedbackCadastro").attr("class", "alert alert-success")
-                        document.getElementById("feedbackCadastro").innerHTML = "Cadastro realizado com sucesso!";
-                    } else {
-                        $("#feedbackCadastro").attr("class", "alert alert-danger")
-                        document.getElementById("feedbackCadastro").innerHTML = "Ocorreu um erro durante o cadastro.";
-                    }
+                    }, function () {
+                        var feedback = ${feedback}
+                        if (feedback) {
+                            $("#feedbackCadastro").attr("class", "alert alert-success")
+                            document.getElementById("feedbackCadastro").innerHTML = "Cadastro realizado com sucesso!";
+                        } else {
+                            $("#feedbackCadastro").attr("class", "alert alert-danger")
+                            document.getElementById("feedbackCadastro").innerHTML = "Ocorreu um erro durante o cadastro.";
+                        }
+                    });
                 });
-            });
-
         </script>
         <script type="text/javascript">
-
-            $(document).ready(function () {
-
-                $('#email').focus();
-                $("#formLogin").validate({
-                    rules: {
-                        email: {required: true, email: true},
-                        senha: {required: true}
-                    },
-                    messages: {
-                        email: {required: '', email: ''},
-                        senha: {required: ''}
-                    },
-                    submitHandler: function (form) {
-                        var dados = $(form).serialize();
-
-                        $.ajax({
-                            type: "POST",
-                            url: "iris/logar?ajax=true",
-                            data: dados,
-                            dataType: 'json',
-                            success: function (data)
-                            {
-                                if (data.result === true) {
-                                    window.location.href = "iris/sistema";
-                                }
-                                else {
-                                    $('#call-modal').trigger('click');
-                                }
-                            }
-                        });
-
-                        return false;
-                    },
-                    errorClass: "help-block",
-                    errorElement: "span",
-                    highlight: function (element, errorClass, validClass) {
-                        $(element).parents('.form-group').addClass('has-error');
-                        $(element).parents(".input-group-addon").addClass("danger");
-                        $(".input-group-addon").attr("title", "Existe(m) erro(s) no(s) campo(s) em vermelho. Verifique!");
-                    },
-                    unhighlight: function (element, errorClass, validClass) {
-                        $(element).parents('.form-group').removeClass('has-error');
-                        $(element).parents('.form-group').addClass('has-success');
-                        $(element).parents(".input-group-addon").removeClass("danger");
-                        $(element).parents(".input-group-addon").addClass("success");
-                    }
-                });
-
-            });
+//
+//            $(document).ready(function () {
+//
+//            $('#email').focus();
+//            $("#formLogin").validate({
+//            rules: {
+//            email: {required: true, email: true},
+//                    senha: {required: true}
+//            },
+//                    messages: {
+//                    email: {required: '', email: ''},
+//                            senha: {required: ''}
+//                    },
+//                    submitHandler: function (form) {
+//                        var dados = $(form).serialize();
+//                        $.ajax({
+//                            type: "POST",
+//                            url: "iris/logar?ajax=true",
+//                            data: dados,
+//                            dataType: 'json',
+//                            success: function (data)
+//                            {
+//                                if (data.result === true) {
+//                                    window.location.href = "iris/sistema";
+//                                }
+//                                else {
+//                                    $('#call-modal').trigger('click');
+//                                }
+//                            }
+//                        });
+//                        return false;
+//                    },
+//                    errorClass: "help-block",
+//                    errorElement: "span",
+//                    highlight: function (element, errorClass, validClass) {
+//                        $(element).parents('.form-group').addClass('has-error');
+//                        $(element).parents(".input-group-addon").addClass("danger");
+//                        $(".input-group-addon").attr("title", "Existe(m) erro(s) no(s) campo(s) em vermelho. Verifique!");
+//                    },
+//                    unhighlight: function (element, errorClass, validClass) {
+//                        $(element).parents('.form-group').removeClass('has-error');
+//                        $(element).parents('.form-group').addClass('has-success');
+//                        $(element).parents(".input-group-addon").removeClass("danger");
+//                        $(element).parents(".input-group-addon").addClass("success");
+//                    }
+//            });
+//            });
         </script>
 
     </body>
