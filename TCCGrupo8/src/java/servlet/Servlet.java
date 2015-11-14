@@ -9,12 +9,12 @@ import dao.UsuarioDao;
 import entity.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -28,7 +28,6 @@ public class Servlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String action = request.getParameter("txtMetodo");
-        RequestDispatcher rd = request.getRequestDispatcher("index.html");
         UsuarioDao dao;
         Usuario usuario = new Usuario();
         try (PrintWriter out = response.getWriter()) {
@@ -37,12 +36,17 @@ public class Servlet extends HttpServlet {
                 usuario.setNome(request.getParameter("txtNome"));
                 usuario.setEmail(request.getParameter("txtEmail"));
                 usuario.setSenha(request.getParameter("txtSenha"));
-                dao.saveOrUpdate(usuario);
-                String feedback = "Cadastro de usuario feito com sucesso";
-                response.setContentType("application/json");
-                response.setCharacterEncoding("UTF-8");
-                response.getWriter().append(feedback);
 
+                boolean feedback;
+                try {
+                    dao.saveOrUpdate(usuario);
+                    feedback = true;
+                } catch (Exception e) {
+                    feedback = false;
+                }
+
+                HttpSession session = request.getSession();
+                session.setAttribute("feedback", feedback);
             }
         }
     }
