@@ -9,6 +9,7 @@ import dao.UsuarioDao;
 import entity.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -29,9 +30,9 @@ public class Servlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String action = request.getParameter("txtMetodo");
         HttpSession session = request.getSession();
-        UsuarioDao dao;
+        UsuarioDao dao = new UsuarioDao();
         Usuario usuario = new Usuario();
-        dao = new UsuarioDao();
+        RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
         try (PrintWriter out = response.getWriter()) {
             if (action.equals("Cadastrar")) {
                 usuario.setNome(request.getParameter("txtNome"));
@@ -49,8 +50,7 @@ public class Servlet extends HttpServlet {
                 }
 
                 session.setAttribute("feedback", feedback);
-            }
-            else if (action.equals("Logar")) {
+            } else if (action.equals("Logar")) {
                 usuario.setEmail(request.getParameter("txtEmail"));
                 usuario.setSenha(request.getParameter("txtSenha"));
 

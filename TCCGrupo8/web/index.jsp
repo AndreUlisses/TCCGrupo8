@@ -69,9 +69,6 @@
                                 <div class="form-actions" style="text-align: center">
                                     <button id="btnAcessar" class="btn btn-primary btn-block" >Acessar</button>
                                 </div>
-
-                                <input type="hidden" name="txtObjeto" id="txtObjeto" value="Usuario">
-                                <input type="hidden" name="txtMetodo" id="txtMetodo" value="Logar">
                             </form>          
                         </div>
                     </div>
@@ -85,25 +82,6 @@
                 <p id="copyright" class="guest"><span>Iris Communication</span> <em>© 2015</em></p>
             </div>
         </div>
-
-
-        <!--        <a href="iris/#notification" id="call-modal" role="button" class="btn" data-toggle="modal" style="display: none ">notification</a>
-                <div id="notification" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content"> 
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                <h4 id="myModalLabel">Iris</h4>
-                            </div>
-                            <div class="modal-body">
-                                <h5 style="text-align: center">Os dados de acesso estão incorretos, por favor tente novamente!</h5>
-                            </div>
-                            <div class="modal-footer">
-                                <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Fechar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>-->
 
         <div id="cadastrarModal" class="modal fade">
             <div class="modal-open">
@@ -145,7 +123,7 @@
                                                 </div>
                                             </div>
                                             <button type="reset" class="btn btn-default btn-lg">Limpar</button>
-                                            <button id="cadastrar" type="button"  class="btn btn-default btn-lg" >Cadastrar</button>
+                                            <button id="cadastrar" type="button"  class="btn btn-default btn-lg">Cadastrar</button>
 
                                             <input type="hidden" name="txtObjeto" id="txtObjeto" value="Usuario">
                                             <input type="hidden" name="txtMetodo" id="txtMetodo" value="Cadastrar">
@@ -159,8 +137,8 @@
             </div>
         </div>
 
-                <!-- Le javascript
-                ================================================== -->
+        <!-- Le javascript
+        ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
         <script src="include/js/jquery.js"></script>
         <script src="include/js/bootstrap-transition.js"></script>
@@ -176,28 +154,26 @@
         <script src="include/js/bootstrap-carousel.js"></script>
         <script src="include/js/bootstrap-typeahead.js"></script>
 
-        <script>
-                $("#cadastrar").click(function () {
-                    $("#feedbackCadastro").load("Servlet", {
-                        txtObjeto: 'Usuario'
-                        , txtMetodo: 'Cadastrar'
-                        , txtSenha: document.getElementById("txtSenha").value
-                        , txtNome: document.getElementById("txtNome").value
-                        , txtEmail: document.getElementById("txtEmail").value
-
-                    }, function () {
-                        var feedback = ${feedback}
-                        if (feedback) {
-                            $("#feedbackCadastro").attr("class", "alert alert-success")
-                            document.getElementById("feedbackCadastro").innerHTML = "Cadastro realizado com sucesso!";
-                        } else {
-                            $("#feedbackCadastro").attr("class", "alert alert-danger")
-                            document.getElementById("feedbackCadastro").innerHTML = "Ocorreu um erro durante o cadastro.";
-                        }
-                    });
-                });
-        </script>
         <script type="text/javascript">
+            $("#cadastrar").click(function () {
+                $("#feedbackCadastro").load("Servlet", {
+                    txtObjeto: 'Usuario'
+                    , txtMetodo: 'Cadastrar'
+                    , txtSenha: document.getElementById("txtSenha").value
+                    , txtNome: document.getElementById("txtNome").value
+                    , txtEmail: document.getElementById("txtEmail").value
+
+                }, function () {
+                    var feedback = ${feedback}
+                    if (feedback) {
+                        $("#feedbackCadastro").attr("class", "alert alert-success");
+                        document.getElementById("feedbackCadastro").innerHTML = "Cadastro realizado com sucesso!";
+                    } else {
+                        $("#feedbackCadastro").attr("class", "alert alert-danger");
+                        document.getElementById("feedbackCadastro").innerHTML = "Ocorreu um erro durante o cadastro.";
+                    }
+                });
+            });
 //
 //            $(document).ready(function () {
 //
