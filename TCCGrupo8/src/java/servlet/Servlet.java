@@ -9,12 +9,12 @@ import dao.UsuarioDao;
 import entity.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import org.hibernate.HibernateException;
 
 /**
  *
@@ -41,9 +41,11 @@ public class Servlet extends HttpServlet {
                 try {
                     dao.saveOrUpdate(usuario);
                     feedback = true;
+                } catch (HibernateException e) {
+                    feedback = false;
                 } catch (Exception e) {
                     feedback = false;
-                }
+                } 
 
                 HttpSession session = request.getSession();
                 session.setAttribute("feedback", feedback);
