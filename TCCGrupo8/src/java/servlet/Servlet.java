@@ -47,19 +47,18 @@ public class Servlet extends HttpServlet {
                 } catch (Exception e) {
                     feedback = false;
                 }
-                out.write(feedback + ""); 
+                out.write(feedback + "");
                 request.setAttribute("feedback", feedback);
-//                rd.forward(request, response);
             } else if (action.equals("Logar")) {
-                usuario.setEmail(request.getParameter("txtEmail"));
-                usuario.setSenha(request.getParameter("txtSenha"));
+                usuario.setEmail(request.getParameter("emailLogin"));
+                usuario.setSenha(request.getParameter("senhaLogin"));
+                Usuario usuarioLogado = dao.getAutenticacao(usuario.getEmail(), usuario.getSenha());
+                out.println(usuarioLogado.getNome() + usuarioLogado.getEmail() + usuarioLogado.getSenha());
 
-                usuario = dao.getAutenticacao(usuario.getEmail(), usuario.getSenha());
-
-                if (usuario != null) {
+                if (usuarioLogado != null) {
                     response.sendRedirect("dashboard.jsp");
-                    session.setAttribute("nomeUsuario", usuario.getNome());
-                    session.setAttribute("usuarioLogado", usuario);
+                    session.setAttribute("nomeUsuario", usuarioLogado.getNome());
+                    session.setAttribute("usuarioLogado", usuarioLogado);
                 } else {
                     response.sendRedirect("index.jsp");
                 }
@@ -67,7 +66,7 @@ public class Servlet extends HttpServlet {
                 if (session.getAttribute("usuarioLogado") != null) {
                     usuario = (Usuario) session.getAttribute("usuarioLogado");
                 } else {
-                    response.sendRedirect("index.jsp");
+                    response.sendRedirect("dashboard.jsp");
                 }
             }
         }

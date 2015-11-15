@@ -4,6 +4,7 @@
     Author     : Matheus
 --%>
 
+<%@page import="entity.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,9 +42,10 @@
         <style>.cke{visibility:hidden;}</style>
     </head>
     <%
-        String nomeUsuario = (String) session.getAttribute("usuarioAutenticado");
+        Usuario usuario = (Usuario) session.getAttribute("usuarioLogado");
+        String nomeUsuario = usuario.getNome();
 
-        if (nomeUsuario == null) {
+        if (usuario == null) {
             throw new ServletException("Não há usuário logado");
         }
     %>

@@ -49,14 +49,14 @@
                                 <div class="form-group">
                                     <div class="input-group">
                                         <span id="span-email" class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                        <input id="emailLogin" name="email" type="email" placeholder="Email" class="form-control"> 
+                                        <input id="emailLogin" name="emailLogin" type="email" placeholder="E-Mail" class="form-control"> 
                                     </div>      
                                 </div>
 
                                 <div class="form-group">
                                     <div class="input-group">
                                         <span id="span-senha" class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                        <input id="senhaLogin" name="senha" type="password" placeholder="Senha" class="form-control" required="" aria-required="true">
+                                        <input id="senhaLogin" name="senhaLogin" type="password" placeholder="Senha" class="form-control" required="" aria-required="true">
                                     </div>
                                 </div>
 
@@ -66,7 +66,7 @@
                                 </div>  
 
                                 <div class="form-actions" style="text-align: center">
-                                    <button id="btnAcessar" class="btn btn-primary btn-block" >Acessar</button>
+                                    <button id="logar" type="submit" class="btn btn-primary btn-block">Acessar</button>
                                 </div>
                                 <input type="hidden" name="txtObjeto" id="txtObjeto" value="Usuario">
                                 <input type="hidden" name="txtMetodo" id="txtMetodo" value="Logar">
@@ -156,6 +156,8 @@
         <script src="include/js/bootstrap-typeahead.js"></script>
 
         <script type="text/javascript">
+            $("#login").submit(function () {
+            });
             $("#cadastrar").click(function () {
                 $.ajax({
                     type: "POST",

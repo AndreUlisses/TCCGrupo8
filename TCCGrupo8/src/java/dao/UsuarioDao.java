@@ -55,11 +55,13 @@ public class UsuarioDao {
         return usuarioList;
     }
 
-    public Usuario getAutenticacao(String email, String senha) {
+    public Usuario getAutenticacao(String emailLogin, String senhaLogin) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.getTransaction();
-        Query query = session.createQuery("FROM entity.Usuario "
-                + "WHERE Usuario.email =: " + email); // AND Usuario.senha =: senha");
+        Query query = session.createQuery("FROM entity.Usuario"
+                + " WHERE email = ? AND senha = ?");
+        query.setParameter(0, emailLogin);
+        query.setParameter(1, senhaLogin);
         return (Usuario) query.uniqueResult();
     }
 }
