@@ -1,12 +1,6 @@
-<%-- 
-    Document   : dashboard
-    Created on : 14/11/2015, 03:16:19
-    Author     : Matheus
---%>
-
 <%@page import="entity.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+
 <html lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -42,14 +36,21 @@
         <style>.cke{visibility:hidden;}</style>
     </head>
     <%
-        Usuario usuario = (Usuario) session.getAttribute("usuarioLogado");
-        String nomeUsuario = usuario.getNome();
-
-        if (usuario == null) {
-            throw new ServletException("Não há usuário logado");
+        Usuario usuario;
+        usuario = (Usuario) session.getAttribute("usuarioLogado");
+        String nomeUsuario;
+        
+        try {
+            nomeUsuario = usuario.getNome();
+            if (usuario == null) {
+                throw new ServletException("Não há usuário logado");
+            }
+        } catch (NullPointerException e) {
+                throw new ServletException("Não há usuário logado");
         }
+
     %>
-    <body class=" pace-done">
+    <body class="pace-done">
         <div class="pace  pace-inactive">
             <div class="pace-progress" data-progress-text="100%" data-progress="99" style="width: 100%;">
                 <div class="pace-progress-inner">
@@ -94,7 +95,7 @@
                                 <li><a href="/mural#" data-toggle="modal" data-target="#Modal-AlterarSenha"><i class="fa fa-user"></i>&nbsp;
                                         Alterar Senha</a></li>
                                 <li class="divider"></li>
-                                <li><a href="/sistema/sair"><i class="fa fa-sign-out"></i>&nbsp; Sair</a></li>
+                                <li><a id="sair" href="./index.jsp"><i class="fa fa-sign-out"></i>&nbsp; Sair</a></li>
                             </ul></li>
                     </ul>
                 </div>
@@ -114,7 +115,7 @@
                         </ul>
                         <ul class="nav">
                             <li class="nav-header">Menu</li>
-                            <li class="has-sub active"><a href="/dashboard.html"><i class="fa fa-comment"></i>
+                            <li class="has-sub active"><a href="./dashboard.jsp"><i class="fa fa-comment"></i>
                                     <span>Mural</span></a></li>
                             <li class="has-sub ">
                                 <a href="javascript:;"> <b class="caret pull-right"></b> <i class="fa fa-file-text"></i> <span>Procedimento<span class="label label-theme m-l-5">Novo</span></span>
@@ -177,10 +178,6 @@
 
             <div id="content" class="content">
                 <script src="include/js/retira_tag_html.js"></script> 
-
-
-
-
                 <script type="text/javascript">
                     $(document).ready(function () {
                         $(document).on('click', 'a', function (event) {
@@ -188,7 +185,16 @@
                             $('#id_modal').val(rs);
                         });
                     });
-                </script>        </div>
+
+                    $("#sair").click(function () {
+                        alert("Saindo");
+                    <%
+                        usuario = null;
+                        session.setAttribute("usuarioLogado", usuario);
+                    %>
+                    });
+                </script>     
+            </div>
 
             <div class="theme-panel">
                 <a href="javascript:;" data-click="theme-panel-expand" class="theme-collapse-btn"><i class="fa fa-cog"></i></a>

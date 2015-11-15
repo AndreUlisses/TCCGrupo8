@@ -1,3 +1,4 @@
+<%@page import="entity.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -32,6 +33,9 @@
                 background-size: cover;
             }
         </style>
+        <%
+            Usuario usuario = new Usuario();
+        %>
     </head>
 
     <body>
