@@ -178,6 +178,7 @@
                             $("#feedbackCadastro").append("Ocorreu um erro durante o cadastro.");
                         }
                     }, error: function () {
+                        $("#feedbackCadastro").empty();
                         $("#feedbackCadastro").attr("class", "alert alert-danger");
                         $("#feedbackCadastro").append("Ocorreu um erro durante o cadastro.");
                     }
