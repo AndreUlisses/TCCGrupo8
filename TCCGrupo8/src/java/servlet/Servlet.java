@@ -38,8 +38,7 @@ public class Servlet extends HttpServlet {
                 usuario.setNome(request.getParameter("txtNome"));
                 usuario.setEmail(request.getParameter("txtEmail"));
                 usuario.setSenha(request.getParameter("txtSenha"));
-
-                boolean feedback;
+                boolean feedback = true;
                 try {
                     dao.saveOrUpdate(usuario);
                     feedback = true;
@@ -48,8 +47,9 @@ public class Servlet extends HttpServlet {
                 } catch (Exception e) {
                     feedback = false;
                 }
-
-                session.setAttribute("feedback", feedback);
+                out.write(feedback + ""); 
+                request.setAttribute("feedback", feedback);
+//                rd.forward(request, response);
             } else if (action.equals("Logar")) {
                 usuario.setEmail(request.getParameter("txtEmail"));
                 usuario.setSenha(request.getParameter("txtSenha"));

@@ -45,8 +45,7 @@
                             </div>
                         </div>
                         <div class="panel-body">
-                            <form id="formLogin" class="form-vertical" method="post" action="" novalidate="novalidate">        
-
+                            <form id="formLogin" class="form-vertical" method="post" action="Servlet" novalidate="novalidate">        
                                 <div class="form-group">
                                     <div class="input-group">
                                         <span id="span-email" class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -69,6 +68,8 @@
                                 <div class="form-actions" style="text-align: center">
                                     <button id="btnAcessar" class="btn btn-primary btn-block" >Acessar</button>
                                 </div>
+                                <input type="hidden" name="txtObjeto" id="txtObjeto" value="Usuario">
+                                <input type="hidden" name="txtMetodo" id="txtMetodo" value="Logar">
                             </form>          
                         </div>
                     </div>
@@ -97,7 +98,7 @@
                             <div class="container">
                                 <div class="modal-body">
                                     <div class="container">
-                                        <form method="post" action="Servlet" name="frmPrincipal" id="frmPrincipal">
+                                        <form method="post" action="" name="frmPrincipal" id="frmPrincipal">
                                             <div class="row">
                                                 <div class="col-md-4">
                                                     <div class="form-group">
@@ -154,23 +155,31 @@
         <script src="include/js/bootstrap-carousel.js"></script>
         <script src="include/js/bootstrap-typeahead.js"></script>
 
-           <script type="text/javascript">
+        <script type="text/javascript">
             $("#cadastrar").click(function () {
-                $("#feedbackCadastro").load("Servlet", {
-                    txtObjeto: 'Usuario'
-                    , txtMetodo: 'Cadastrar'
-                    , txtSenha: document.getElementById("txtSenha").value
-                    , txtNome: document.getElementById("txtNome").value
-                    , txtEmail: document.getElementById("txtEmail").value
-
-                }, function () {
-                    var feedback = ${feedback}
-                    if (feedback) {
-                        $("#feedbackCadastro").attr("class", "alert alert-success");
-                        document.getElementById("feedbackCadastro").innerHTML = "Cadastro realizado com sucesso!";
-                    } else {
+                $.ajax({
+                    type: "POST",
+                    url: "Servlet",
+                    async: true,
+                    data: {
+                        txtObjeto: 'Usuario',
+                        txtMetodo: 'Cadastrar',
+                        txtSenha: $("#txtSenha").val(),
+                        txtNome: $("#txtNome").val(),
+                        txtEmail: $("#txtEmail").val()
+                    }, success: function (responseText) {
+                        if (responseText === 'true') {
+                            $("#feedbackCadastro").empty();
+                            $("#feedbackCadastro").attr("class", "alert alert-success");
+                            $("#feedbackCadastro").append("Cadastro realizado com sucesso!");
+                        } else {
+                            $("#feedbackCadastro").empty();
+                            $("#feedbackCadastro").attr("class", "alert alert-danger");
+                            $("#feedbackCadastro").append("Ocorreu um erro durante o cadastro.");
+                        }
+                    }, error: function () {
                         $("#feedbackCadastro").attr("class", "alert alert-danger");
-                        document.getElementById("feedbackCadastro").innerHTML = "Ocorreu um erro durante o cadastro.";
+                        $("#feedbackCadastro").append("Ocorreu um erro durante o cadastro.");
                     }
                 });
             });
