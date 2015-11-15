@@ -160,8 +160,6 @@
         <script src="include/js/bootstrap-typeahead.js"></script>
 
         <script type="text/javascript">
-            $("#login").submit(function () {
-            });
             $("#cadastrar").click(function () {
                 $.ajax({
                     type: "POST",

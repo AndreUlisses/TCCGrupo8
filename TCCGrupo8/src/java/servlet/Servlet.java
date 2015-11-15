@@ -47,32 +47,26 @@ public class Servlet extends HttpServlet {
                 } catch (Exception e) {
                     feedback = false;
                 }
-                out.write(feedback + "");
                 request.setAttribute("feedback", feedback);
-            } else if (action.equals("Logar")) {
-                usuario.setEmail(request.getParameter("emailLogin"));
-                usuario.setSenha(request.getParameter("senhaLogin"));
-                Usuario usuarioLogado = dao.getAutenticacao(usuario.getEmail(), usuario.getSenha());
-                out.println(usuarioLogado.getNome() + usuarioLogado.getEmail() + usuarioLogado.getSenha());
 
-                if (usuarioLogado != null) {
-                    response.sendRedirect("dashboard.jsp");
+            } else if (action.equals("Logar")) {
+                try {
+                    usuario.setEmail(request.getParameter("emailLogin"));
+                    usuario.setSenha(request.getParameter("senhaLogin"));
+                    Usuario usuarioLogado = dao.getAutenticacao(usuario.getEmail(), usuario.getSenha());
                     session.setAttribute("nomeUsuario", usuarioLogado.getNome());
                     session.setAttribute("usuarioLogado", usuarioLogado);
-                } else {
+                    response.sendRedirect("dashboard.jsp");
+                } catch (NullPointerException e) {
                     response.sendRedirect("index.jsp");
                 }
             } else {
-                if (session.getAttribute("usuarioLogado") != null) {
-                    usuario = (Usuario) session.getAttribute("usuarioLogado");
-                } else {
-                    response.sendRedirect("dashboard.jsp");
-                }
+                response.sendRedirect("index.jsp");
             }
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
