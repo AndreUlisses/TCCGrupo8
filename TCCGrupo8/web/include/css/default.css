@@ -5,6 +5,8 @@ Author: Sean Ngu
 Website: http://www.seantheme.com/color-admin-v1.7/admin/
 */
 
+
+
 .navbar-logo,
 .coming-soon .brand .logo,
 .login .login-header .brand .logo {
@@ -41,8 +43,6 @@ Website: http://www.seantheme.com/color-admin-v1.7/admin/
         background: #007BAC;
     }
 }
-
-
 /* Added in v1.5 */
 
 .gradient-enabled .navbar.navbar-inverse .navbar-brand,

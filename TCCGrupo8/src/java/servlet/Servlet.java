@@ -59,6 +59,8 @@ public class Servlet extends HttpServlet {
                     response.sendRedirect("dashboard.jsp");
                 } catch (NullPointerException e) {
                     response.sendRedirect("index.jsp");
+                } catch (Exception e) {
+                    response.sendRedirect("index.jsp");
                 }
             } else {
                 response.sendRedirect("index.jsp");

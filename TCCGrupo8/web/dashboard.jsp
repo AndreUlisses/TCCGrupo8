@@ -33,21 +33,22 @@
         <script src="include/js/jquery-1.11.3.min.js"></script>
         <script src="include/js/jquery-1.9.1.min.js"></script>
         <!-- ================== END BASE JS ================== -->
+
         <style>.cke{visibility:hidden;}</style>
     </head>
     <%
-        Usuario usuario;
-        usuario = (Usuario) session.getAttribute("usuarioLogado");
-        String nomeUsuario;
-        
-        try {
-            nomeUsuario = usuario.getNome();
-            if (usuario == null) {
-                throw new ServletException("Não há usuário logado");
-            }
-        } catch (NullPointerException e) {
-                throw new ServletException("Não há usuário logado");
-        }
+//        Usuario usuario;
+//        usuario = (Usuario) session.getAttribute("usuarioLogado");
+        String nomeUsuario = "teste";
+
+//        try {
+//            nomeUsuario = usuario.getNome();
+//            if (usuario == null) {
+//                throw new ServletException("Não há usuário logado");
+//            }
+//        } catch (NullPointerException e) {
+//            throw new ServletException("Não há usuário logado");
+//        }
 
     %>
     <body class="pace-done">
@@ -68,7 +69,7 @@
             <div id="header" class="header navbar navbar-inverse navbar-fixed-top">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a href="/dashboard.html" class="navbar-brand"><span class="navbar-logoC"><img src="include/img/conceitual.gif" width="30" height="30"></span> Conceitual</a>
+                        <a href="/dashboard.jsp" class="navbar-brand"><span class="navbar-logoC"><img src="include/img/conceitual.gif" width="30" height="30"></span> Conceitual</a>
                         <button type="button" class="navbar-toggle" data-click="sidebar-toggled">
                             <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
                         </button>
@@ -87,7 +88,8 @@
                                 </div>
                             </form>
                         </li>
-                        <li class="dropdown navbar-user"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <img src="include/img/usuario.jpg" width="100" height="100" alt=""> <span class="hidden-xs"> <%=nomeUsuario%></span>
+                        <li class="dropdown navbar-user">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <img src="include/img/usuario.jpg" width="100" height="100" alt=""> <span class="hidden-xs"> <%=nomeUsuario%></span>
                                 <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu animated fadeInLeft">
@@ -96,11 +98,14 @@
                                         Alterar Senha</a></li>
                                 <li class="divider"></li>
                                 <li><a id="sair" href="./index.jsp"><i class="fa fa-sign-out"></i>&nbsp; Sair</a></li>
-                            </ul></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" id="chat" class="btn btn-default toggle-sidebar"><i class="fa fa-comment"></i></a>
+                        </li>
                     </ul>
                 </div>
             </div>
-
             <div id="sidebar" class="sidebar">
                 <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 100%;"><div data-scrollbar="true" data-height="100%" style="overflow: hidden; width: auto; height: 100%;">
                         <ul class="nav">
@@ -174,91 +179,20 @@
                         </ul>
                     </div><div class="slimScrollBar ui-draggable" style="width: 7px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 745px; background: rgb(0, 0, 0);"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div></div>
             </div>
-            <div class="sidebar-bg"></div>
-
             <div id="content" class="content">
                 <script src="include/js/retira_tag_html.js"></script> 
                 <script type="text/javascript">
-                    $(document).ready(function () {
-                        $(document).on('click', 'a', function (event) {
-                            var rs = $(this).attr('registro');
-                            $('#id_modal').val(rs);
-                        });
-                    });
-
-                    $("#sair").click(function () {
-                        alert("Saindo");
-                    <%
-                        usuario = null;
-                        session.setAttribute("usuarioLogado", usuario);
-                    %>
-                    });
+//                    $("#sair").click(function () {
+//                        alert("Saindo");
+//                    <%
+//                        usuario = null;
+//                        session.setAttribute("usuarioLogado", usuario);
+%>//
+//                    });
                 </script>     
             </div>
-
-            <div class="theme-panel">
-                <a href="javascript:;" data-click="theme-panel-expand" class="theme-collapse-btn"><i class="fa fa-cog"></i></a>
-                <div class="theme-panel-content">
-                    <div class="row m-t-10">
-                        <div class="col-md-5 control-label double-line">Estilo do Cabeçalho</div>
-                        <div class="col-md-7">
-                            <select name="header-styling" class="form-control input-sm">
-                                <option value="2">Padrão</option>
-                                <option value="1">Inverso</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row m-t-10">
-                        <div class="col-md-5 control-label">Cabeçalho</div>
-                        <div class="col-md-7">
-                            <select name="header-fixed" class="form-control input-sm">
-                                <option value="1">Fixo</option>
-                                <option value="2">Padrão</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row m-t-10">
-                        <div class="col-md-5 control-label double-line">Estilo Menu</div>
-                        <div class="col-md-7">
-                            <select name="sidebar-styling" class="form-control input-sm">
-                                <option value="1">Padrão</option>
-                                <option value="2">Grade</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row m-t-10">
-                        <div class="col-md-5 control-label">Menu</div>
-                        <div class="col-md-7">
-                            <select name="sidebar-fixed" class="form-control input-sm">
-                                <option value="1">Fixo</option>
-                                <option value="2">Padrão</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row m-t-10">
-                        <div class="col-md-5 control-label double-line">Menu Gradiente</div>
-                        <div class="col-md-7">
-                            <select name="content-gradient" class="form-control input-sm">
-                                <option value="1">Desabilitar</option>
-                                <option value="2">Habilitar</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row m-t-10">
-                        <div class="col-md-5 control-label double-line">Estilo do Conteúdo</div>
-                        <div class="col-md-7">
-                            <select name="content-styling" class="form-control input-sm">
-                                <option value="1">Padrão</option>
-                                <option value="2">Preto</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
         </div>
-
         <!-- ================== BEGIN BASE JS ================== -->
         <script src="include/js/jquery-migrate-1.1.0.min.js"></script>
         <script src="include/js/jquery-ui.min.js"></script>
@@ -287,26 +221,29 @@
                         App.init();
                         TableManageDefault.init();
                     });
+                    $("#chat").click(function () {
+                        $("#wrapper").toggleClass("toggled");
+                    })
         </script>
+        <div id="sidebarchat">aaa teste</div>
 
 
         <script>
-            $("#txtBuscador").on("keyup", buscar);
-
-            function buscar() {
-                var tarjetas = $(".panel");
-                var texto = $("#txtBuscador").val();
-                texto = texto.toLowerCase();
-                tarjetas.show();
-                for (var i = 0; i < tarjetas.size(); i++) {
-                    var contenido = tarjetas.eq(i).text();
-                    contenido = contenido.toLowerCase();
-                    var index = contenido.indexOf(texto);
-                    if (index === -1) {
-                        tarjetas.eq(i).hide();
-                    }
-                }
-            }
+//            $("#txtBuscador").on("keyup", buscar);
+//            function buscar() {
+//                var tarjetas = $(".panel");
+//                var texto = $("#txtBuscador").val();
+//                texto = texto.toLowerCase();
+//                tarjetas.show();
+//                for (var i = 0; i < tarjetas.size(); i++) {
+//                    var contenido = tarjetas.eq(i).text();
+//                    contenido = contenido.toLowerCase();
+//                    var index = contenido.indexOf(texto);
+//                    if (index === -1) {
+//                        tarjetas.eq(i).hide();
+//                    }
+//                }
+//            }
         </script>
 
 
@@ -323,28 +260,7 @@
                     </div>
 
                     <div class="modal-body">
-                        <form id="formAlterarSenha" role="form">
-
-                            <div id="alterarSenhaErro"></div>
-
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <input type="password" class="form-control" id="txtSenha" placeholder="Senha atual" required="true"> <label for="uPassword" class="input-group-addon glyphicon glyphicon-lock"></label>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <input type="password" class="form-control" id="txtNovaSenha" placeholder="Nova senha" required="true"> <label for="uPassword" class="input-group-addon glyphicon glyphicon-lock"></label>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <input type="password" class="form-control" id="txtCNS" placeholder="Confirme nova senha" required="true"> <label for="uPassword" class="input-group-addon glyphicon glyphicon-lock"></label>
-                                </div>
-                            </div>
-                        </form>
+                        <label>Contate seu admnistrador</label>
                     </div>
 
                     <div id="rodapeSenha" class="modal-footer">
