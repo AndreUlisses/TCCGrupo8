@@ -101,11 +101,15 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#" id="chat" class="btn btn-default toggle-sidebar"><i class="fa fa-comment"></i></a>
+                            <a href="#" id="btnChat" ><i class="fa fa-comment"></i></a>
                         </li>
                     </ul>
                 </div>
             </div>
+                <div id="chat" class="collapse" >
+
+                </div>
+
             <div id="sidebar" class="sidebar">
                 <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 100%;"><div data-scrollbar="true" data-height="100%" style="overflow: hidden; width: auto; height: 100%;">
                         <ul class="nav">
@@ -182,17 +186,18 @@
             <div id="content" class="content">
                 <script src="include/js/retira_tag_html.js"></script> 
                 <script type="text/javascript">
-//                    $("#sair").click(function () {
-//                        alert("Saindo");
-//                    <%
+                    //                    $("#sair").click(function () {
+                    //                        alert("Saindo");
+                    //                    <%
 //                        usuario = null;
-//                        session.setAttribute("usuarioLogado", usuario);
-%>//
-//                    });
+//                        session.setAttribute("usuari        oLogado", usuario);
+                    %>//
+                    //                    });
                 </script>     
             </div>
             <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
         </div>
+
         <!-- ================== BEGIN BASE JS ================== -->
         <script src="include/js/jquery-migrate-1.1.0.min.js"></script>
         <script src="include/js/jquery-ui.min.js"></script>
@@ -217,33 +222,32 @@
         <!-- ================== END PAGE LEVEL JS ================== -->
 
         <script>
-                    $(document).ready(function () {
+                    $(document).ready(function() {
                         App.init();
                         TableManageDefault.init();
                     });
-                    $("#chat").click(function () {
-                        $("#wrapper").toggleClass("toggled");
-                    })
+                    $("#btnChat").click(function() {
+                        $("#chat").toggleClass('collapse sidebarRightContent')
+                    });
         </script>
-        <div id="sidebarchat">aaa teste</div>
 
 
         <script>
-//            $("#txtBuscador").on("keyup", buscar);
-//            function buscar() {
-//                var tarjetas = $(".panel");
-//                var texto = $("#txtBuscador").val();
-//                texto = texto.toLowerCase();
-//                tarjetas.show();
-//                for (var i = 0; i < tarjetas.size(); i++) {
-//                    var contenido = tarjetas.eq(i).text();
-//                    contenido = contenido.toLowerCase();
-//                    var index = contenido.indexOf(texto);
-//                    if (index === -1) {
-//                        tarjetas.eq(i).hide();
-//                    }
-//                }
-//            }
+            //            $("#txtBuscador").on("keyup", buscar);
+            //            function buscar() {
+            //                var tarjetas = $(".panel");
+            //                var texto = $("#txtBuscador").val();
+            //                texto = texto.toLowerCase();
+            //                tarjetas.show();
+            //                for (var i = 0; i < tarjetas.size(); i++) {
+            //                    var contenido = tarjetas.eq(i).text();
+            //                    contenido = contenido.toLowerCase();
+            //                    var index = contenido.indexOf(texto);
+            //                    if (index === -1) {
+            //                        tarjetas.eq(i).hide();
+            //                    }
+            //                }
+            //            }
         </script>
 
 
