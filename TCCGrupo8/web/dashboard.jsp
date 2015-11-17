@@ -69,7 +69,7 @@
             <div id="header" class="header navbar navbar-inverse navbar-fixed-top">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a href="/dashboard.jsp" class="navbar-brand"><span class="navbar-logoC"><img src="include/img/conceitual.gif" width="30" height="30"></span> Conceitual</a>
+                        <a href="./dashboard.jsp" class="navbar-brand"><span class="navbar-logoC"><img src="include/img/conceitual.gif" width="30" height="30"></span> Conceitual</a>
                         <button type="button" class="navbar-toggle" data-click="sidebar-toggled">
                             <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
                         </button>
@@ -101,66 +101,12 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#" id="btnChat" ><i class="fa fa-comment"></i></a>
+                            <a href="javascript:;" id="btnChat"><i class="fa fa-comment"></i></a>
                         </li>
                     </ul>
                 </div>
             </div>
             <div id="chat" class="sidebarRightContent">
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                SIDEBARSIDEBARSIDEBARSIDEBAR
-                abc teste
             </div>
 
             <div id="sidebar" class="sidebar">
@@ -597,8 +543,8 @@
                     //                        alert("Saindo");
                     //                    <%
 //                        usuario = null;
-//                        session.setAttribute("usuari        oLogado", usuario);
-%>//
+                        //                        session.setAttribute("usuarioLogado", usuario);
+                    %>//
                     //                    });
                 </script>     
             </div>
