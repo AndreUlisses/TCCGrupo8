@@ -26,19 +26,21 @@
         <link href="include/css/parsley.css" rel="stylesheet">
         <link href="include/css/bootstrap-datepicker3.css" rel="stylesheet">
         <link href="include/css/bootstrap-datetimepicker.css" rel="stylesheet">
+        <link href="nanoscroller.css" rel="stylesheet" >
         <!-- ================== END PAGE LEVEL STYLE ================== -->
 
         <!-- ================== BEGIN BASE JS ================== -->
         <script src="include/js/pace.min.js"></script>
         <script src="include/js/jquery-1.11.3.min.js"></script>
         <script src="include/js/jquery-1.9.1.min.js"></script>
+        <script src="include/js/jquery.nanoscroller"></script>
         <!-- ================== END BASE JS ================== -->
 
         <style>.cke{visibility:hidden;}</style>
     </head>
     <%
-//        Usuario usuario;
-//        usuario = (Usuario) session.getAttribute("usuarioLogado");
+        Usuario usuario;
+        usuario = (Usuario) session.getAttribute("usuarioLogado");
         String nomeUsuario = "teste";
 
 //        try {
@@ -106,8 +108,342 @@
                     </ul>
                 </div>
             </div>
-            <div id="chat" class="sidebarRightContent">
+
+
+
+
+
+            <!--CHAT CHAT CHAT-->
+            <div id="chat" class="collapse">
+                <a class="lv-item" href="javascript:;">
+                    <div class="media-body">
+                        <div class="pull-left p-relative">
+                            <img src="include/img/usuario.jpg" width="48" height="48" alt="">
+                        </div>
+                        <div class="text-center">
+                            <div class="lv-title">Matheus</div>
+                            <small class="lv-small">Online</small>
+                        </div>
+                    </div>
+                </a>     
+
+                <a class="lv-item" href="javascript:;">
+                    <div class="media-body">
+                        <div class="pull-left p-relative">
+                            <img src="include/img/usuario.jpg" width="48" height="48" alt="">
+                        </div>
+                        <div class="text-center">
+                            <div class="lv-title small">Márcio</div>
+                            <small class="lv-small">Online</small>
+                        </div>
+                    </div>
+                </a>    
+
+                <a class="lv-item" href="javascript:;">
+                    <div class="media-body">
+                        <div class="pull-left p-relative">
+                            <img src="include/img/usuario.jpg" width="48" height="48" alt="">
+                        </div>
+                        <div class="text-center">
+                            <div class="lv-title">Conceitual</div>
+                            <small class="lv-small">Online</small>
+                        </div>
+                    </div>
+                </a>    
+                <a class="lv-item" href="javascript:;">
+                    <div class="media-body">
+                        <div class="pull-left p-relative">
+                            <img src="include/img/usuario.jpg" width="48" height="48" alt="">
+                        </div>
+                        <div class="text-center">
+                            <div class="lv-title">Conceitual</div>
+                            <small class="lv-small">Online</small>
+                        </div>
+                    </div>
+                </a>    
+                <a class="lv-item" href="javascript:;">
+                    <div class="media-body">
+                        <div class="pull-left p-relative">
+                            <img src="include/img/usuario.jpg" width="48" height="48" alt="">
+                        </div>
+                        <div class="text-center">
+                            <div class="lv-title">Conceitual</div>
+                            <small class="lv-small">Online</small>
+                        </div>
+                    </div>
+                </a>    
+                <a class="lv-item" href="javascript:;">
+                    <div class="media-body">
+                        <div class="pull-left p-relative">
+                            <img src="include/img/usuario.jpg" width="48" height="48" alt="">
+                        </div>
+                        <div class="text-center">
+                            <div class="lv-title">Conceitual</div>
+                            <small class="lv-small">Online</small>
+                        </div>
+                    </div>
+                </a>    
+                <a class="lv-item" href="javascript:;">
+                    <div class="media-body">
+                        <div class="pull-left p-relative">
+                            <img src="include/img/usuario.jpg" width="48" height="48" alt="">
+                        </div>
+                        <div class="text-center">
+                            <div class="lv-title">Conceitual</div>
+                            <small class="lv-small">Online</small>
+                        </div>
+                    </div>
+                </a>    
+                <a class="lv-item" href="javascript:;">
+                    <div class="media-body">
+                        <div class="pull-left p-relative">
+                            <img src="include/img/usuario.jpg" width="48" height="48" alt="">
+                        </div>
+                        <div class="text-center">
+                            <div class="lv-title">Conceitual</div>
+                            <small class="lv-small">Online</small>
+                        </div>
+                    </div>
+                </a>    
+                <a class="lv-item" href="javascript:;">
+                    <div class="media-body">
+                        <div class="pull-left p-relative">
+                            <img src="include/img/usuario.jpg" width="48" height="48" alt="">
+                        </div>
+                        <div class="text-center">
+                            <div class="lv-title">Conceitual</div>
+                            <small class="lv-small">Online</small>
+                        </div>
+                    </div>
+                </a>    
+                <a class="lv-item" href="javascript:;">
+                    <div class="media-body">
+                        <div class="pull-left p-relative">
+                            <img src="include/img/usuario.jpg" width="48" height="48" alt="">
+                        </div>
+                        <div class="text-center">
+                            <div class="lv-title">Conceitual</div>
+                            <small class="lv-small">Online</small>
+                        </div>
+                    </div>
+                </a>    
+                <a class="lv-item" href="javascript:;">
+                    <div class="media-body">
+                        <div class="pull-left p-relative">
+                            <img src="include/img/usuario.jpg" width="48" height="48" alt="">
+                        </div>
+                        <div class="text-center">
+                            <div class="lv-title">Conceitual</div>
+                            <small class="lv-small">Online</small>
+                        </div>
+                    </div>
+                </a>    
+                <a class="lv-item" href="javascript:;">
+                    <div class="media-body">
+                        <div class="pull-left p-relative">
+                            <img src="include/img/usuario.jpg" width="48" height="48" alt="">
+                        </div>
+                        <div class="text-center">
+                            <div class="lv-title">Conceitual</div>
+                            <small class="lv-small">Online</small>
+                        </div>
+                    </div>
+                </a>    
+                <a class="lv-item" href="javascript:;">
+                    <div class="media-body">
+                        <div class="pull-left p-relative">
+                            <img src="include/img/usuario.jpg" width="48" height="48" alt="">
+                        </div>
+                        <div class="text-center">
+                            <div class="lv-title">Conceitual</div>
+                            <small class="lv-small">Online</small>
+                        </div>
+                    </div>
+                </a>    
+                <a class="lv-item" href="javascript:;">
+                    <div class="media-body">
+                        <div class="pull-left p-relative">
+                            <img src="include/img/usuario.jpg" width="48" height="48" alt="">
+                        </div>
+                        <div class="text-center">
+                            <div class="lv-title">Conceitual</div>
+                            <small class="lv-small">Online</small>
+                        </div>
+                    </div>
+                </a>    
+                <a class="lv-item" href="javascript:;">
+                    <div class="media-body">
+                        <div class="pull-left p-relative">
+                            <img src="include/img/usuario.jpg" width="48" height="48" alt="">
+                        </div>
+                        <div class="text-center">
+                            <div class="lv-title">Conceitual</div>
+                            <small class="lv-small">Online</small>
+                        </div>
+                    </div>
+                </a>    
+
+                <a class="lv-item" href="javascript:;">
+                    <div class="media-body">
+                        <div class="pull-left p-relative">
+                            <img src="include/img/usuario.jpg" width="48" height="48" alt="">
+                        </div>
+                        <div class="text-center">
+                            <div class="lv-title center-block">Conceitual</div>
+                            <small class="lv-small">Online</small>
+                        </div>
+                    </div>
+                </a>                                        
+                <a class="lv-item" href="javascript:;">
+                    <div class="media-body">
+                        <div class="pull-left p-relative">
+                            <img src="include/img/usuario.jpg" width="48" height="48" alt="">
+                        </div>
+                        <div class="text-center">
+                            <div class="lv-title center-block">Maria</div>
+                            <small class="lv-small">Online</small>
+                        </div>
+                    </div>
+                </a>                                        
+                <a class="lv-item" href="javascript:;">
+                    <div class="media-body">
+                        <div class="pull-left p-relative">
+                            <img src="include/img/usuario.jpg" width="48" height="48" alt="">
+                        </div>
+                        <div class="text-center">
+                            <div class="lv-title center-block">Maria</div>
+                            <small class="lv-small">Online</small>
+                        </div>
+                    </div>
+                </a>                                        
+                <a class="lv-item" href="javascript:;">
+                    <div class="media-body">
+                        <div class="pull-left p-relative">
+                            <img src="include/img/usuario.jpg" width="48" height="48" alt="">
+                        </div>
+                        <div class="text-center">
+                            <div class="lv-title center-block">Maria</div>
+                            <small class="lv-small">Online</small>
+                        </div>
+                    </div>
+                </a>                                        
+                <a class="lv-item" href="javascript:;">
+                    <div class="media-body">
+                        <div class="pull-left p-relative">
+                            <img src="include/img/usuario.jpg" width="48" height="48" alt="">
+                        </div>
+                        <div class="text-center">
+                            <div class="lv-title center-block">Maria</div>
+                            <small class="lv-small">Online</small>
+                        </div>
+                    </div>
+                </a>                                        
+                <a class="lv-item" href="javascript:;">
+                    <div class="media-body">
+                        <div class="pull-left p-relative">
+                            <img src="include/img/usuario.jpg" width="48" height="48" alt="">
+                        </div>
+                        <div class="text-center">
+                            <div class="lv-title center-block">Maria</div>
+                            <small class="lv-small">Online</small>
+                        </div>
+                    </div>
+                </a>                                        
+                <a class="lv-item" href="javascript:;">
+                    <div class="media-body">
+                        <div class="pull-left p-relative">
+                            <img src="include/img/usuario.jpg" width="48" height="48" alt="">
+                        </div>
+                        <div class="text-center">
+                            <div class="lv-title center-block">Maria</div>
+                            <small class="lv-small">Online</small>
+                        </div>
+                    </div>
+                </a>                                        
+                <a class="lv-item" href="javascript:;">
+                    <div class="media-body">
+                        <div class="pull-left p-relative">
+                            <img src="include/img/usuario.jpg" width="48" height="48" alt="">
+                        </div>
+                        <div class="text-center">
+                            <div class="lv-title center-block">Maria</div>
+                            <small class="lv-small">Online</small>
+                        </div>
+                    </div>
+                </a>                                        
+                <a class="lv-item" href="javascript:;">
+                    <div class="media-body">
+                        <div class="pull-left p-relative">
+                            <img src="include/img/usuario.jpg" width="48" height="48" alt="">
+                        </div>
+                        <div class="text-center">
+                            <div class="lv-title center-block">Maria</div>
+                            <small class="lv-small">Online</small>
+                        </div>
+                    </div>
+                </a>                                        
+                <a class="lv-item" href="javascript:;">
+                    <div class="media-body">
+                        <div class="pull-left p-relative">
+                            <img src="include/img/usuario.jpg" width="48" height="48" alt="">
+                        </div>
+                        <div class="text-center">
+                            <div class="lv-title center-block">Maria</div>
+                            <small class="lv-small">Online</small>
+                        </div>
+                    </div>
+                </a>                                        
+                <a class="lv-item" href="javascript:;">
+                    <div class="media-body">
+                        <div class="pull-left p-relative">
+                            <img src="include/img/usuario.jpg" width="48" height="48" alt="">
+                        </div>
+                        <div class="text-center">
+                            <div class="lv-title center-block">Maria</div>
+                            <small class="lv-small">Online</small>
+                        </div>
+                    </div>
+                </a>                                        
+                <a class="lv-item" href="javascript:;">
+                    <div class="media-body">
+                        <div class="pull-left p-relative">
+                            <img src="include/img/usuario.jpg" width="48" height="48" alt="">
+                        </div>
+                        <div class="text-center">
+                            <div class="lv-title center-block">Maria</div>
+                            <small class="lv-small">Online</small>
+                        </div>
+                    </div>
+                </a>                                        
+                <a class="lv-item" href="javascript:;">
+                    <div class="media-body">
+                        <div class="pull-left p-relative">
+                            <img src="include/img/usuario.jpg" width="48" height="48" alt="">
+                        </div>
+                        <div class="text-center">
+                            <div class="lv-title center-block">Maria</div>
+                            <small class="lv-small">Online</small>
+                        </div>
+                    </div>
+                </a>                                        
+                <a class="lv-item" href="javascript:;">
+                    <div class="media-body">
+                        <div class="pull-left p-relative">
+                            <img src="include/img/usuario.jpg" width="48" height="48" alt="">
+                        </div>
+                        <div class="text-center">
+                            <div class="lv-title center-block">João</div>
+                            <small class="lv-small">Online</small>
+                        </div>
+                    </div>
+                </a>                                        
             </div>
+            <!--CHAT CHAT CHAT-->
+
+
+
+
+
 
             <div id="sidebar" class="sidebar">
                 <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 100%;"><div data-scrollbar="true" data-height="100%" style="overflow: hidden; width: auto; height: 100%;">
@@ -539,14 +875,13 @@
                 testetestetestetestetestetestetestetestetestetestetestetestetestetestetesteteste
                 <script src="include/js/retira_tag_html.js"></script> 
                 <script type="text/javascript">
-                    //                    $("#sair").click(function () {
-                    //                        alert("Saindo");
-                    //                    <%
-//                        usuario = null;
-                        //                        session.setAttribute("usuarioLogado", usuario);
-                    %>//
-                    //                    });
-                </script>     
+                    $("#sair").click(function () {
+                        alert("Saindo");
+                    <%
+                        usuario = null;
+                        session.setAttribute("usuarioLogado", usuario);
+                    %>
+                    });</script>     
             </div>
             <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
         </div>
@@ -575,12 +910,22 @@
         <!-- ================== END PAGE LEVEL JS ================== -->
 
         <script>
-                    $(document).ready(function() {
+                    $(document).ready(function () {
                         App.init();
                         TableManageDefault.init();
                     });
-                    $("#btnChat").click(function() {
+                    $("#btnChat").click(function () {
                         $("#chat").toggleClass('collapse sidebarRightContent');
+                    });
+                    $(function () {
+                        $('#chat').slimScroll({
+                            height: '0px',
+                            color: '#00f',
+                            size: '10px',
+                            allowPageScroll: false,
+                            railVisible: true,
+                            alwaysVisible: true,
+                        });
                     });
         </script>
 
