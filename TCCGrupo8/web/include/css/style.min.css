@@ -17,5 +17,22 @@ Website: http://www.seantheme.com/color-admin-v1.7/admin/
     -webkit-transform: translateZ(0);
     min-height: 92vh;
     max-height: 92vh;
-    /*overflow-y: auto;*/
+    overflow-y: auto;
+}
+
+a.lv-item:link { 
+    text-decoration: none;
+    color: #F2F2F2;
+}
+
+a.lv-item:hover {
+    color: #655d6f;
+}
+.icon-online:before {
+    content: ' \25CF';
+    font-size: 12px;
+    color: #5CB85C;
+}
+
+.circle:before {
 }
