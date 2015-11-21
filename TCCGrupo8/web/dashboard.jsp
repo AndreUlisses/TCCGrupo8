@@ -114,37 +114,37 @@
 
 
             <!--CHAT CHAT CHAT-->
-            <div id="chat" class="collapse">
+            <div id="chat" class="sidebarRightContent animated slideInDown">
                 <a class="lv-item" href="javascript:;">
                     <div class="media-body p-l-5 p-b-10">
                         <div>
-                        <div class="pull-right p-r-10 m-2">
-                            <img src="include/img/usuario.jpg" width="32" height="32" alt="" class="img-circle">
-                        </div>
+                            <div class="pull-left p-r-10 m-2">
+                                <img src="include/img/usuario.jpg" width="32" height="32" alt="" class="img-circle">
+                            </div>
                             <div class="lv-item">Matheus dos Santos Fraga</div>
                             <div class="icon-online"><small class="lv-small p-l-5">Online</small></div>
                         </div>
                     </div>
                 </a>     
-                      
+
                 <a class="lv-item" href="javascript:;">
                     <div class="media-body p-l-5 p-b-10">
                         <div>
-                        <div class="pull-right p-r-10 m-2">
-                            <img src="include/img/usuario.jpg" width="32" height="32" alt="" class="img-circle">
-                        </div>
+                            <div class="pull-left p-r-10 m-2">
+                                <img src="include/img/usuario.jpg" width="32" height="32" alt="" class="img-circle">
+                            </div>
                             <div class="lv-item">Márcio da Silva</div>
                             <div class="icon-online"><small class="lv-small p-l-5">Online</small></div>
                         </div>
                     </div>
                 </a>  
-                
+
                 <a class="lv-item" href="javascript:;">
                     <div class="media-body p-l-5 p-b-10">
                         <div>
-                        <div class="pull-right p-r-10 m-2">
-                            <img src="include/img/usuario.jpg" width="32" height="32" alt="" class="img-circle">
-                        </div>
+                            <div class="pull-left p-r-10 m-2">
+                                <img src="include/img/usuario.jpg" width="32" height="32" alt="" class="img-circle">
+                            </div>
                             <div class="lv-item">Cláudio Provesano Reis</div>
                             <div class="icon-online"><small class="lv-small p-l-5">Online</small></div>
                         </div>
@@ -153,9 +153,9 @@
                 <a class="lv-item" href="javascript:;">
                     <div class="media-body p-l-5 p-b-10">
                         <div>
-                        <div class="pull-right p-r-10 m-2">
-                            <img src="include/img/usuario.jpg" width="32" height="32" alt="" class="img-circle">
-                        </div>
+                            <div class="pull-left p-r-10 m-2">
+                                <img src="include/img/usuario.jpg" width="32" height="32" alt="" class="img-circle">
+                            </div>
                             <div class="lv-item">Maria do Carmo Provesano Reis</div>
                             <div class="icon-online"><small class="lv-small p-l-5">Online</small></div>
                         </div>
@@ -164,9 +164,9 @@
                 <a class="lv-item" href="javascript:;">
                     <div class="media-body p-l-5 p-b-10">
                         <div>
-                        <div class="pull-right p-r-10 m-2">
-                            <img src="include/img/usuario.jpg" width="32" height="32" alt="" class="img-circle">
-                        </div>
+                            <div class="pull-left p-r-10 m-2">
+                                <img src="include/img/usuario.jpg" width="32" height="32" alt="" class="img-circle">
+                            </div>
                             <div class="lv-item">Raíssa Provesano Reis</div>
                             <div class="icon-online"><small class="lv-small p-l-5">Online</small></div>
                         </div>
@@ -175,9 +175,9 @@
                 <a class="lv-item" href="javascript:;">
                     <div class="media-body p-l-5 p-b-10">
                         <div>
-                        <div class="pull-right p-r-10 m-2">
-                            <img src="include/img/usuario.jpg" width="32" height="32" alt="" class="img-circle">
-                        </div>
+                            <div class="pull-left p-r-10 m-2">
+                                <img src="include/img/usuario.jpg" width="32" height="32" alt="" class="img-circle">
+                            </div>
                             <div class="lv-item">Rian Provesano Reis</div>
                             <div class="icon-online"><small class="lv-small p-l-5">Online</small></div>
                         </div>
@@ -186,9 +186,9 @@
                 <a class="lv-item" href="javascript:;">
                     <div class="media-body p-l-5 p-b-10">
                         <div>
-                        <div class="pull-right p-r-10 m-2">
-                            <img src="include/img/usuario.jpg" width="32" height="32" alt="" class="img-circle">
-                        </div>
+                            <div class="pull-left p-r-10 m-2">
+                                <img src="include/img/usuario.jpg" width="32" height="32" alt="" class="img-circle">
+                            </div>
                             <div class="lv-item">Adriano da Silva Souza</div>
                             <div class="icon-online"><small class="lv-small p-l-5">Online</small></div>
                         </div>
@@ -197,9 +197,9 @@
                 <a class="lv-item" href="javascript:;">
                     <div class="media-body p-l-5 p-b-10">
                         <div>
-                        <div class="pull-right p-r-10 m-2">
-                            <img src="include/img/usuario.jpg" width="32" height="32" alt="" class="img-circle">
-                        </div>
+                            <div class="pull-left p-r-10 m-2">
+                                <img src="include/img/usuario.jpg" width="32" height="32" alt="" class="img-circle">
+                            </div>
                             <div class="lv-item">Pablo Prazeres</div>
                             <div class="icon-online"><small class="lv-small p-l-5">Online</small></div>
                         </div>
@@ -208,9 +208,9 @@
                 <a class="lv-item" href="javascript:;">
                     <div class="media-body p-l-5 p-b-10">
                         <div>
-                        <div class="pull-right p-r-10 m-2">
-                            <img src="include/img/usuario.jpg" width="32" height="32" alt="" class="img-circle">
-                        </div>
+                            <div class="pull-left p-r-10 m-2">
+                                <img src="include/img/usuario.jpg" width="32" height="32" alt="" class="img-circle">
+                            </div>
                             <div class="lv-item">Francisco Chico</div>
                             <div class="icon-online"><small class="lv-small p-l-5">Online</small></div>
                         </div>
@@ -219,9 +219,9 @@
                 <a class="lv-item" href="javascript:;">
                     <div class="media-body p-l-5 p-b-10">
                         <div>
-                        <div class="pull-right p-r-10 m-2">
-                            <img src="include/img/usuario.jpg" width="32" height="32" alt="" class="img-circle">
-                        </div>
+                            <div class="pull-left p-r-10 m-2">
+                                <img src="include/img/usuario.jpg" width="32" height="32" alt="" class="img-circle">
+                            </div>
                             <div class="lv-item">Andrew Constantino</div>
                             <div class="icon-online"><small class="lv-small p-l-5">Online</small></div>
                         </div>
@@ -230,9 +230,9 @@
                 <a class="lv-item" href="javascript:;">
                     <div class="media-body p-l-5 p-b-10">
                         <div>
-                        <div class="pull-right p-r-10 m-2">
-                            <img src="include/img/usuario.jpg" width="32" height="32" alt="" class="img-circle">
-                        </div>
+                            <div class="pull-left p-r-10 m-2">
+                                <img src="include/img/usuario.jpg" width="32" height="32" alt="" class="img-circle">
+                            </div>
                             <div class="lv-item">Fábio Silva Pinto</div>
                             <div class="icon-online"><small class="lv-small p-l-5">Online</small></div>
                         </div>
@@ -241,9 +241,9 @@
                 <a class="lv-item" href="javascript:;">
                     <div class="media-body p-l-5 p-b-10">
                         <div>
-                        <div class="pull-right p-r-10 m-2">
-                            <img src="include/img/usuario.jpg" width="32" height="32" alt="" class="img-circle">
-                        </div>
+                            <div class="pull-left p-r-10 m-2">
+                                <img src="include/img/usuario.jpg" width="32" height="32" alt="" class="img-circle">
+                            </div>
                             <div class="lv-item">Cláudio Roberto Tenfen</div>
                             <div class="icon-online"><small class="lv-small p-l-5">Online</small></div>
                         </div>
@@ -252,9 +252,9 @@
                 <a class="lv-item" href="javascript:;">
                     <div class="media-body p-l-5 p-b-10">
                         <div>
-                        <div class="pull-right p-r-10 m-2">
-                            <img src="include/img/usuario.jpg" width="32" height="32" alt="" class="img-circle">
-                        </div>
+                            <div class="pull-left p-r-10 m-2">
+                                <img src="include/img/usuario.jpg" width="32" height="32" alt="" class="img-circle">
+                            </div>
                             <div class="lv-item">Márcio Soares</div>
                             <div class="icon-online"><small class="lv-small p-l-5">Online</small></div>
                         </div>
@@ -263,9 +263,9 @@
                 <a class="lv-item" href="javascript:;">
                     <div class="media-body p-l-5 p-b-10">
                         <div>
-                        <div class="pull-right p-r-10 m-2">
-                            <img src="include/img/usuario.jpg" width="32" height="32" alt="" class="img-circle">
-                        </div>
+                            <div class="pull-left p-r-10 m-2">
+                                <img src="include/img/usuario.jpg" width="32" height="32" alt="" class="img-circle">
+                            </div>
                             <div class="lv-item">Patrick Machado</div>
                             <div class="icon-online"><small class="lv-small p-l-5">Online</small></div>
                         </div>
@@ -274,9 +274,9 @@
                 <a class="lv-item" href="javascript:;">
                     <div class="media-body p-l-5 p-b-10">
                         <div>
-                        <div class="pull-right p-r-10 m-2">
-                            <img src="include/img/usuario.jpg" width="32" height="32" alt="" class="img-circle">
-                        </div>
+                            <div class="pull-left p-r-10 m-2">
+                                <img src="include/img/usuario.jpg" width="32" height="32" alt="" class="img-circle">
+                            </div>
                             <div class="lv-item">Rafael Mateus</div>
                             <div class="icon-online"><small class="lv-small p-l-5">Online</small></div>
                         </div>
@@ -285,9 +285,9 @@
                 <a class="lv-item" href="javascript:;">
                     <div class="media-body p-l-5 p-b-10">
                         <div>
-                        <div class="pull-right p-r-10 m-2">
-                            <img src="include/img/usuario.jpg" width="32" height="32" alt="" class="img-circle">
-                        </div>
+                            <div class="pull-left p-r-10 m-2">
+                                <img src="include/img/usuario.jpg" width="32" height="32" alt="" class="img-circle">
+                            </div>
                             <div class="lv-item">Nilton deolindo</div>
                             <div class="icon-online"><small class="lv-small p-l-5">Online</small></div>
                         </div>
@@ -296,9 +296,9 @@
                 <a class="lv-item" href="javascript:;">
                     <div class="media-body p-l-5 p-b-10">
                         <div>
-                        <div class="pull-right p-r-10 m-2">
-                            <img src="include/img/usuario.jpg" width="32" height="32" alt="" class="img-circle">
-                        </div>
+                            <div class="pull-left p-r-10 m-2">
+                                <img src="include/img/usuario.jpg" width="32" height="32" alt="" class="img-circle">
+                            </div>
                             <div class="lv-item">Vanderleia</div>
                             <div class="icon-online"><small class="lv-small p-l-5">Online</small></div>
                         </div>
@@ -307,9 +307,9 @@
                 <a class="lv-item" href="javascript:;">
                     <div class="media-body p-l-5 p-b-10">
                         <div>
-                        <div class="pull-right p-r-10 m-2">
-                            <img src="include/img/usuario.jpg" width="32" height="32" alt="" class="img-circle">
-                        </div>
+                            <div class="pull-left p-r-10 m-2">
+                                <img src="include/img/usuario.jpg" width="32" height="32" alt="" class="img-circle">
+                            </div>
                             <div class="lv-item">Silvana Souza</div>
                             <div class="icon-online"><small class="lv-small p-l-5">Online</small></div>
                         </div>
@@ -318,9 +318,9 @@
                 <a class="lv-item" href="javascript:;">
                     <div class="media-body p-l-5 p-b-10">
                         <div>
-                        <div class="pull-right p-r-10 m-2">
-                            <img src="include/img/usuario.jpg" width="32" height="32" alt="" class="img-circle">
-                        </div>
+                            <div class="pull-left p-r-10 m-2">
+                                <img src="include/img/usuario.jpg" width="32" height="32" alt="" class="img-circle">
+                            </div>
                             <div class="lv-item">Ana Priscila Teste</div>
                             <div class="icon-online"><small class="lv-small p-l-5">Online</small></div>
                         </div>
@@ -329,17 +329,14 @@
                 <a class="lv-item" href="javascript:;">
                     <div class="media-body p-l-5 p-b-10">
                         <div>
-                        <div class="pull-right p-r-10 m-2">
-                            <img src="include/img/usuario.jpg" width="32" height="32" alt="" class="img-circle">
-                        </div>
+                            <div class="pull-left p-r-10 m-2">
+                                <img src="include/img/usuario.jpg" width="32" height="32" alt="" class="img-circle">
+                            </div>
                             <div class="lv-item">Jannifer Barbosa Teste Souza</div>
                             <div class="icon-online"><small class="lv-small p-l-5">Online</small></div>
                         </div>
                     </div>
                 </a>     
-                      
-                
-                
             </div>
             <!--CHAT CHAT CHAT-->
 
@@ -816,9 +813,10 @@
                     $(document).ready(function () {
                         App.init();
                         TableManageDefault.init();
+                        $("#chat").toggleClass('slideOutUp');
                     });
                     $("#btnChat").click(function () {
-                        $("#chat").toggleClass('collapse sidebarRightContent');
+                        $("#chat").toggleClass('slideOutUp');
                     });
                     $(function () {
                         $('#chat').slimScroll({
@@ -827,7 +825,7 @@
                             size: '10px',
                             allowPageScroll: false,
                             railVisible: true,
-                            alwaysVisible: true,
+                            alwaysVisible: true
                         });
                     });
         </script>

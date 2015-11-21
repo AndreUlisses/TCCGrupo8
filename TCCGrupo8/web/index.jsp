@@ -66,7 +66,7 @@
 
                                 <div class="form-group">
                                     <label></label>
-                                    <a class="pull-left link_login" href="#cadastrarModal" data-toggle="modal">Registrar</a>  
+                                    <a class="pull-right link_login" href="#cadastrarModal" data-toggle="modal">Registrar</a>  
                                 </div>  
 
                                 <div class="form-actions" style="text-align: center">
